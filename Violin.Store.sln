@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Violin.Store.Web", "Violin.Store.Web\Violin.Store.Web.csproj", "{80C72978-B5A6-4864-A44E-54AE4B181F75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Violin.Store.Database", "Violin.Store.Database\Violin.Store.Database.csproj", "{05BF745B-5206-449F-9B97-DA2B8A9F0177}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Violin.Store.Classes", "Violin.Store.Classes\Violin.Store.Classes.csproj", "{BFAA40B3-475C-4166-A69F-EACB880CD8F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Violin.Store.Tools", "Violin.Store.Tools\Violin.Store.Tools.csproj", "{2FF6A77B-29BA-4695-B077-44E7A913AA8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80C72978-B5A6-4864-A44E-54AE4B181F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C72978-B5A6-4864-A44E-54AE4B181F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C72978-B5A6-4864-A44E-54AE4B181F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C72978-B5A6-4864-A44E-54AE4B181F75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BF745B-5206-449F-9B97-DA2B8A9F0177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BF745B-5206-449F-9B97-DA2B8A9F0177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BF745B-5206-449F-9B97-DA2B8A9F0177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BF745B-5206-449F-9B97-DA2B8A9F0177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFAA40B3-475C-4166-A69F-EACB880CD8F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFAA40B3-475C-4166-A69F-EACB880CD8F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFAA40B3-475C-4166-A69F-EACB880CD8F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFAA40B3-475C-4166-A69F-EACB880CD8F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF6A77B-29BA-4695-B077-44E7A913AA8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF6A77B-29BA-4695-B077-44E7A913AA8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF6A77B-29BA-4695-B077-44E7A913AA8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF6A77B-29BA-4695-B077-44E7A913AA8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
