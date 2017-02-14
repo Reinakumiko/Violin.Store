@@ -12,7 +12,6 @@ namespace Violin.Store.Database
 	{
 		public DbSet<Goods> Goods { get; set; }
 		public DbSet<Discography> Discography { get; set; }
-		public DbSet<Live> Live { get; set; }
 		public DbSet<News> News { get; set; }
 		public DbSet<Profile> Profile { get; set; }
 		public DbSet<Schedule> Schedule { get; set; }
@@ -26,6 +25,7 @@ namespace Violin.Store.Database
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
+
 
 			base.OnModelCreating(modelBuilder);
 		}

@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 namespace Violin.Store.Classes
 {
+
 	/// <summary>
-	/// 大概叫做发现好货的商城吧
+	/// 销售价格
 	/// </summary>
-	public class Goods
+	public struct SalePrice
 	{
 		/// <summary>
-		/// 产品目录
+		/// 价格
 		/// </summary>
-		public List<Products> Products { get; set; }
+		public double Price { get; set; }
+
+		/// <summary>
+		/// 是否含税
+		/// </summary>
+		public bool IsIncludeTax { get; set; }
 	}
+
 }

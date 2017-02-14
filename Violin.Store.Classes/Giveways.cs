@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 namespace Violin.Store.Classes
 {
 	/// <summary>
-	/// 演唱会信息
+	/// 附送赠品
 	/// </summary>
-	public class Live
+	public class Giveaway
 	{
-
+		/// <summary>
+		/// 赠品名称
+		/// </summary>
+		public string Name { get; set; }
 	}
 }
