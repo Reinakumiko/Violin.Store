@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,23 @@ namespace Violin.Store.Classes
 	public class Goods
 	{
 		/// <summary>
-		/// 产品目录
+		/// 以作为数据库表的主键
 		/// </summary>
-		public List<Products> Products { get; set; }
+		[Key] public int ProductId { get; set; }
+
+		/// <summary>
+		/// 商品名称
+		/// </summary>
+		public string Name { get; set; }
+
+		/// <summary>
+		/// 商品价格
+		/// </summary>
+		public SalePrice Price { get; set; }
+
+		/// <summary>
+		/// 商品备注
+		/// </summary>
+		public string Note { get; set; }
 	}
 }

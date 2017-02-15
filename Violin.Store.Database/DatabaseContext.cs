@@ -22,12 +22,5 @@ namespace Violin.Store.Database
 			: base("name=LocalConnectionString")
 		{
 		}
-
-		protected override void OnModelCreating(DbModelBuilder modelBuilder)
-		{
-
-
-			base.OnModelCreating(modelBuilder);
-		}
 	}
 }

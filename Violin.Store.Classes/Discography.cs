@@ -13,6 +13,11 @@ namespace Violin.Store.Classes
 	public class Discography
 	{
 		/// <summary>
+		/// 以作为数据库表的主键
+		/// </summary>
+		[Key] public int DiscographyId { get; set; }
+
+		/// <summary>
 		/// 封面图
 		/// </summary>
 		public string CoverImage { get; set; }

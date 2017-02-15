@@ -97,13 +97,63 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\arrow_next.png" />
+    <Content Include="Content\img\bnr_freemember.jpg" />
+    <Content Include="Content\img\goods001.jpg" />
+    <Content Include="Content\img\goods002.jpg" />
+    <Content Include="Content\img\goods003.jpg" />
+    <Content Include="Content\img\goods004.jpg" />
+    <Content Include="Content\img\goods005.jpg" />
+    <Content Include="Content\img\goods006.jpg" />
+    <Content Include="Content\img\goods007.jpg" />
+    <Content Include="Content\img\goods008.jpg" />
+    <Content Include="Content\img\goods009.jpg" />
+    <Content Include="Content\img\goods010.jpg" />
+    <Content Include="Content\img\goods011.jpg" />
+    <Content Include="Content\img\goods012.jpg" />
+    <Content Include="Content\img\goods013.jpg" />
+    <Content Include="Content\img\goods014.jpg" />
+    <Content Include="Content\img\goods015.jpg" />
+    <Content Include="Content\img\goods016.jpg" />
+    <Content Include="Content\img\goods021.jpg" />
+    <Content Include="Content\img\goods022.jpg" />
+    <Content Include="Content\img\goods023.jpg" />
+    <Content Include="Content\img\goods024.jpg" />
+    <Content Include="Content\img\goods025.jpg" />
+    <Content Include="Content\img\jacket_rainbow_a.jpg" />
+    <Content Include="Content\img\jacket_rainbow_b.jpg" />
+    <Content Include="Content\img\mainvisual.jpg" />
+    <Content Include="Content\img\movie20161007.jpg" />
+    <Content Include="Content\img\profile_photo.jpg" />
+    <Content Include="Content\img\sitelogo.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -113,6 +163,13 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -124,7 +181,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Account\" />
-    <Folder Include="Views\Home\" />
+    <Folder Include="Views\News\" />
     <Folder Include="Views\Store\" />
   </ItemGroup>
   <ItemGroup>

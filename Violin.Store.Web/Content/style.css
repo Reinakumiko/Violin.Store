@@ -1,0 +1,158 @@
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+body {
+    font: "roboto";
+    font-family: "roboto" , "source-han-sans-japanese";
+    font-size: 100%;
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px;
+    
+    height: 2000px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sitelogo {
+    width: 14.7%;
+}
+
+.sitelogo a {
+    display: block;
+    padding-top: 28%;
+    background-image: url(img/sitelogo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.nav {
+    padding: 10px 0px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 1px 0px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.nav-hideIcon {
+    color: #fff;
+    padding: 20px 0px;
+    box-shadow: none;
+}
+
+.nav-hideIcon .sitelogo {
+    display: none;
+}
+
+.nav ul {
+    margin: 0px auto;
+    text-align: center;
+    font-size: 100%;
+    max-width: 960px;
+}
+
+.nav li {
+    padding: 0px 10px;
+    vertical-align: middle;
+    display: inline-block;
+    list-style: none;
+}
+
+.nav > ul > li > a {
+    display: block;
+    color: #000;
+    opacity: .8;    
+    font-size: 120%;
+    text-decoration: none;
+}
+
+.nav > ul > li > a:hover {
+    opacity: 1;
+}
+
+.nav-hideIcon > ul > li > a {
+    color: #fff;
+}
+
+.mainvisual{
+    display: block;
+    margin: 0px auto;
+    height: 900px;
+    max-width: 1400px;
+    background: url(img/mainvisual.jpg) no-repeat;
+    background-size: contain;
+}
+
+.blocks .title {
+    font-weight: 300;
+    font-size: 48px;
+}
+
+.blocks .items {
+    background-color: #f2f2f2;
+}
+
+.container {
+    margin: 0px auto;
+    max-width: 960px;
+    margin-top: 30px;
+}
+
+.news .newsDetails {
+    margin: 10px 0px;
+    
+}
+
+.news .newsDetails .newsInfo {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    height: 100%;
+}
+
+.news .newsDetails .newsTitle {
+    color: #000;
+    font-size: 90%;
+    margin-left: 20px;
+}
+
+.news .newsLink {
+    padding: 20px;
+    display: block;
+    background: center no-repeat;
+    background-image: url(img/arrow_next.png);
+    background-position: 97%;
+}
+
+.news .dateTime .dateItem {
+    display: table-cell;
+    text-align: center;
+    vertical-align:middle;
+    height: 100%;
+}
+.news .dateTime .dateItem .date {
+    color: #fff;
+    font-size: 70%;
+    padding: 8px 10px;
+}
+
+.news .dateTime .dateItem .date-date {
+    background-color: #131313;
+}
+
+.news .dateTime .newsType {
+    color: #000;
+    font-size: 70%;
+    padding: 8px 10px;
+}
+
+.news .dateTime .dateItem .date-year {
+    background-color: #333;
+}
+
+.type-media {
+    background-color: #91f4bb;
+}

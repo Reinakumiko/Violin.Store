@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,11 @@ namespace Violin.Store.Classes
 	/// </summary>
 	public class Schedule
 	{
+		/// <summary>
+		/// 以作为数据库表的主键
+		/// </summary>
+		[Key] public int ScheduleId { get; set; }
+
 		/// <summary>
 		/// 日常所属分类
 		/// </summary>

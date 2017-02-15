@@ -1,0 +1,43 @@
+﻿@using Violin.Store.Classes;
+
+
+@{
+	ViewBag.Title = "Index";
+}
+
+
+<nav class="nav nav-hideIcon">
+	<ul>
+		<li class="sitelogo"><a href="."></a></li>
+		<li><a href="#">TOP</a></li>
+		<li><a href="#">NEWS</a></li>
+		<li><a href="#">SCHEDULE</a></li>
+		<li><a href="#">DISCOGRAPHY</a></li>
+		<li><a href="#">GOODS</a></li>
+		<li><a href="#">LIVE</a></li>
+		<li><a href="#">PROFILE</a></li>
+	</ul>
+</nav>
+<div class="mainvisual"></div>
+<div class="container">
+	<div class="blocks news">
+		<div class="title">NEWS</div>
+		<div class="list">
+			@foreach (News news in ViewBag.News)
+			{
+				<div class="newsDetails items">
+					<a class="newsLink" href="/News/@news.NewsID">
+						<div class="newsInfo dateTime">
+							<div class="dateItem">
+								<div class="date date-date">@news.ReleaseTime.ToString("MM.dd")</div>
+								<div class="date date-year">@news.ReleaseTime.Year</div>
+							</div>
+							<div class="dateItem newsType type-media">@news.Type.ToString().ToUpper()</div>
+						</div>
+						<div class="newsInfo newsTitle">@news.Title</div>
+					</a>
+				</div>
+			}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,50 @@
+﻿@model Violin.Store.Classes.News
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>News</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Content)
+        </dd>
+
+    </dl>
+</div>
+<p>
+	<a href="/News/Edit/@Model.NewsID" role="button" class="btn btn-primary">编辑</a>
+	<a href="/News/Index" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
+</p>
