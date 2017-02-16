@@ -14,9 +14,14 @@ namespace Violin.Store.Web.Controllers
 		DatabaseContext db = new DatabaseContext();
 
 		// GET: News
-		public ActionResult Index()
-        {
-            return View();
+		public ActionResult Index(int? id)
+		{
+			if (id.HasValue)
+				return NewsDetail(id);
+
+			ViewBag.News = db.News.OrderByDescending(news => news.ReleaseTime).Take(5).ToList();
+
+			return View();
         }
 
 		public ActionResult NewsDetail(int? id)
@@ -31,7 +36,7 @@ namespace Violin.Store.Web.Controllers
 				return HttpNotFound();
 			}
 
-			return View(news);
+			return View("NewsDetail", news);
 		}
 
 		protected override void Dispose(bool disposing)

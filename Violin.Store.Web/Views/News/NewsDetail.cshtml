@@ -1,0 +1,35 @@
+﻿@using Violin.Store.Classes;
+
+@model News
+
+@{
+    ViewBag.Title = "NewsDetail";
+}
+
+<div class="container">
+	<div class="blocks news newsDetail">
+		<div class="title">NEWS</div>
+		<div class="items">
+			<div class="itemContainer">
+				<div class="newsContentBlock">
+					<div class="newsTitleBlock">
+						<div class="newsInfo dateTime">
+							<div class="dateItem">
+								<div class="date date-date">@Model.ReleaseTime.ToString("MM.dd")</div>
+								<div class="date date-year">@Model.ReleaseTime.Year</div>
+							</div>
+							<div class="dateItem newsType type-media">@Model.Type.ToString().ToUpper()</div>
+						</div>
+						<div class="newsInfo newsTitle newsTitle-ContentTitle">@Model.Title</div>
+					</div>
+					<div class="newsContent">@Html.Raw(Model.Content)</div>
+				</div>
+			</div>
+		</div>
+		<div class="footerControls">
+			<a class="footerItem control control-prev" href="#">&lt; Prev</a>
+			<a class="footerItem control control-list" href="/News">LIST</a>
+			<a class="footerItem control control-next" href="#">Next &gt;</a>
+		</div>
+	</div>
+</div>

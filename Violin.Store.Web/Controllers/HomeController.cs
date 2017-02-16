@@ -19,13 +19,5 @@ namespace Violin.Store.Web.Controllers
 
             return View();
         }
-
-		public ActionResult News(int? newsid)
-		{
-			if (!newsid.HasValue)
-				return RedirectToAction("Index");
-
-			return View();
-		}
     }
 }
