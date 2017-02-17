@@ -13,19 +13,36 @@
 	<nav class="nav nav-hideIcon">
 		<ul>
 			<li class="sitelogo"><a href="."></a></li>
-			<li><a href="#">TOP</a></li>
+			<li><a class="jumpAnimate" href="#top">TOP</a></li>
 			<li><a href="/News">NEWS</a></li>
-			<li><a href="#">SCHEDULE</a></li>
-			<li><a href="#">DISCOGRAPHY</a></li>
-			<li><a href="#">GOODS</a></li>
-			<li><a href="#">LIVE</a></li>
-			<li><a href="#">PROFILE</a></li>
+			<li><a class="jumpAnimate" href="#schedule">SCHEDULE</a></li>
+			<li><a class="jumpAnimate" href="#discography">DISCOGRAPHY</a></li>
+			<li><a class="jumpAnimate" href="#goods">GOODS</a></li>
+			<li><a class="jumpAnimate" href="#profile">PROFILE</a></li>
 		</ul>
 	</nav>
 
 	@RenderBody()
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+	<script src="~/Scripts/jquery-1.11.0.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
+<script>
+	$(document).ready(function () {
+		$(".jumpAnimate").click(function () {
+			var link = $(this).attr("href").replace("#", "");
+
+			var positionHeight = 0;
+
+			if(link != "top")
+				positionHeight = $("div[name=" + link + "]").offset().top;
+
+			console.log(positionHeight);
+
+			$("body").animate({ scrollTop: positionHeight }, 600);
+
+			return false;
+		});
+	});
+</script>
