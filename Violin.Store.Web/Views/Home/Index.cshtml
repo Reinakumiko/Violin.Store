@@ -8,7 +8,7 @@
 
 <div class="mainvisual"></div>
 <div class="container">
-	<div class="blocks news">
+	<div name="news" class="blocks news">
 		<div class="title">NEWS</div>
 		<div class="list">
 			@foreach (News news in ViewBag.News)
@@ -28,13 +28,85 @@
 			}
 		</div>
 	</div>
-	<div name="schedule" class="blocks schedule schedule-tv">
-
-	</div>
-	<div class="blocks schedule schedule-radio">
-
+	<div name="schedule" class="blocks schedule">
+		<div class="title">SCHEDULE</div>
+		<div class="list">
+			<div class="schedule-tv items">
+				<div class="scheduleType scheduleType-tv">TV</div>
+				<div class="scheduleDetails">
+					<div class="scheduleDateTime">11月5日(土)23:15～23:44</div>
+					<div class="scheduleTitle">NHK-BSプレミアム「AKB48 SHOW!」※『レインボーローズ』歌唱</div>
+					<div class="scheduleUrl">
+						<span class="schedulePrefix">【番組HP】</span>
+						<a class="scheduleLink" href="http://www.nhk.or.jp/akb48show/index.html" target="_blank">http://www.nhk.or.jp/akb48show/index.html</a>
+					</div>
+				</div>
+				<div class="scheduleDetails">
+					<div class="scheduleDateTime">11月4日(金)　23：30～23:58</div>
+					<div class="scheduleTitle">フジテレビ「Love music」※『雪恋』歌唱</div>
+					<div class="scheduleUrl">
+						<span class="schedulePrefix">【番組HP】</span>
+						<a href="http://www.fujitv.co.jp/lovemusic/backnumber/index.html" class="scheduleLink">http://www.fujitv.co.jp/lovemusic/backnumber/index.html</a>
+					</div>
+				</div>
+				<div class="scheduleDetails">
+					<div class="scheduleDateTime">10月31日(月)19:00～22:54</div>
+					<div class="scheduleTitle">TBS「ハロウィン音楽祭2016」※『雪恋』歌唱</div>
+					<div class="scheduleUrl">
+						<span class="schedulePrefix">【番組HP】</span>
+						<a href="http://www.tbs.co.jp/halloween_fes/" class="scheduleLink">http://www.tbs.co.jp/halloween_fes/</a>
+					</div>
+				</div>
+				@foreach (Schedule schedule in ViewBag.ScheduleTV)
+				{
+					<div class="scheduleDetails">
+						<div class="scheduleDateTime">@schedule.DateTime</div>
+						<div class="scheduleTitle">@schedule.BangumiName</div>
+						<div class="scheduleUrl">
+							<span class="schedulePrefix">【番組HP】</span>
+							<a class="scheduleLink" target="_blank" href="@schedule.BangumiUrl">@schedule.BangumiUrl</a>
+						</div>
+					</div>
+				}
+			</div>
+			<div class="schedule-radio items">
+				<div class="scheduleType scheduleType-radio">RADIO</div>
+				<div class="scheduleDetails">
+					<div class="scheduleTitle">FM大阪　11月度 E∞Tracks</div>
+					<div class="scheduleUrl">
+						<span class="schedulePrefix">【HP】</span>
+						<a href="http://www.fmosaka.net/" class="scheduleLink">http://www.fmosaka.net/</a>
+					</div>
+				</div>
+				<div class="scheduleDetails">
+					<div class="scheduleTitle">FM新潟　11月度パワープレイ</div>
+					<div class="scheduleUrl">
+						<span class="schedulePrefix">【HP】</span>
+						<a href="https://www.fmniigata.com/" class="scheduleLink">https://www.fmniigata.com/</a>
+					</div>
+				</div>
+				@foreach (Schedule schedule in ViewBag.ScheduleRadio)
+				{
+					<div class="scheduleDetails">
+						<div class="scheduleTitle">@schedule.BangumiName</div>
+						<div class="scheduleUrl">
+							<span class="schedulePrefix">【HP】</span>
+							<a class="scheduleLink" target="_blank" href="@schedule.BangumiUrl">@schedule.BangumiUrl</a>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
 	</div>
 	<div name="discography" class="blocks discography">
+
+	</div>
+
+	<div name="goods" class="blocks goods">
+
+	</div>
+
+	<div name="profile" class="blocks profile">
 
 	</div>
 </div>
