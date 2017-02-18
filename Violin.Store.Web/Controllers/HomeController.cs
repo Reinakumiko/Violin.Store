@@ -15,7 +15,7 @@ namespace Violin.Store.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-			ViewBag.News = database.News.OrderByDescending(news => news.ReleaseTime).Take(5).ToList();
+            ViewBag.News = new List<News>(); // database.News.OrderByDescending(news => news.ReleaseTime).Take(5).ToList();
 
             return View();
         }
