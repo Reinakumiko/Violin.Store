@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>@ViewBag.Title</title>
-	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-	@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
 	<link href="~/Content/style.css" rel="stylesheet" type="text/css" />
-	<script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
 	<nav class="nav nav-hideIcon">
@@ -25,52 +25,24 @@
 	@RenderBody()
 
 	<script src="~/Scripts/jquery-1.11.0.js"></script>
-	<script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
 <script>
-	$(document)
-		.ready(function () {
-			$(".jumpAnimate").click(function () {
-				var link = $(this).attr("href").replace("#", "");
+	$(document).ready(function () {
+		$(".jumpAnimate").click(function () {
+			var link = $(this).attr("href").replace("#", "");
 
-				var positionHeight = 0;
+			var positionHeight = 0;
 
-				if (link != "top")
-					positionHeight = $("div[name=" + link + "]").offset().top;
+			if(link != "top")
+				positionHeight = $("div[name=" + link + "]").offset().top;
 
-				console.log(positionHeight);
+			console.log(positionHeight);
 
-				$("body").animate({ scrollTop: positionHeight }, 600);
+			$("body").animate({ scrollTop: positionHeight }, 600);
 
-				return false;
-			});
-		})
-		.on("scroll", function () {
-			console.log("on scroll debuge message");
-
-			var header = $(".nav"), h = $(".container").offset().top;
-
-
-			header.hide();
-			header.show();
-
-			if (document.body.scrollTop >= h) {
-
-				isHide = true;
-
-				header.removeClass("nav-hideIcon");
-			}
-			else {
-				if (isHide)
-					header.hide();
-
-				header.addClass("nav-hideIcon");
-
-				if (isHide) {
-					header.show();
-					isHide = false;
-				}
-			}
+			return false;
 		});
+	});
 </script>
