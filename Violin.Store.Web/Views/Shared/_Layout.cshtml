@@ -6,29 +6,39 @@
     <title>@ViewBag.Title</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
+<<<<<<< HEAD
 	<link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+=======
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+>>>>>>> origin/master
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-	<nav class="nav nav-hideIcon">
-		<ul>
-			<li class="sitelogo"><a href="."></a></li>
-			<li><a class="jumpAnimate" href="#top">TOP</a></li>
-			<li><a href="/News">NEWS</a></li>
-			<li><a class="jumpAnimate" href="#schedule">SCHEDULE</a></li>
-			<li><a class="jumpAnimate" href="#discography">DISCOGRAPHY</a></li>
-			<li><a class="jumpAnimate" href="#goods">GOODS</a></li>
-			<li><a class="jumpAnimate" href="#profile">PROFILE</a></li>
-		</ul>
-	</nav>
+    <nav class="nav nav-hideIcon" data-show="hide">
+        <ul>
+            <li class="sitelogo"><a href="."></a></li>
+            <li><a class="jumpAnimate" href="#top">TOP</a></li>
+            <li><a href="/News">NEWS</a></li>
+            <li><a class="jumpAnimate" href="#schedule">SCHEDULE</a></li>
+            <li><a class="jumpAnimate" href="#discography">DISCOGRAPHY</a></li>
+            <li><a class="jumpAnimate" href="#goods">GOODS</a></li>
+            <li><a class="jumpAnimate" href="#profile">PROFILE</a></li>
+        </ul>
+    </nav>
 
+<<<<<<< HEAD
 	@RenderBody()
 
 	<script src="~/Scripts/jquery-1.11.0.js"></script>
+=======
+    @RenderBody()
+    <script src="~/Scripts/jquery-1.12.3.js"></script>
+>>>>>>> origin/master
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
 <script>
+<<<<<<< HEAD
 	$(document).ready(function () {
 		$(".jumpAnimate").click(function () {
 			var link = $(this).attr("href").replace("#", "");
@@ -43,6 +53,53 @@
 			$("body").animate({ scrollTop: positionHeight }, 600);
 
 			return false;
+=======
+    $(document)
+		.ready(function () {
+		    $(".jumpAnimate").click(function () {
+		        var link = $(this).attr("href").replace("#", "");
+
+		        var positionHeight = 0;
+
+		        if (link != "top")
+		            positionHeight = $("div[name=" + link + "]").offset().top;
+
+		        console.log(positionHeight);
+
+		        $("body").animate({ scrollTop: positionHeight }, 600);
+
+		        return false;
+		    });
+		})
+		.on("scroll", function () {
+		    var header = $(".nav"), h = $(".container").offset().top;
+		    var hasClass = header.hasClass("nav-hideIcon");
+
+		    //console.log(document.body.scrollTop <= header.height());
+
+		    if (document.body.scrollTop <= header.outerHeight()) {
+		        header.addClass("nav-hideIcon");
+                
+		        if (header.attr("data-show") == "hide")
+		            header.show();
+		    }
+		    else {
+		        header.removeClass("nav-hideIcon");
+
+		        if (header.attr("data-show") == "hide")
+		            header.hide();
+		    }
+
+		    console.log(header.attr("data-show") == "hide");
+		    if (document.body.scrollTop >= h) {
+		        if (header.attr("data-show") == "hide")
+		            header.animate({ height: 'show' }, 250).attr("data-show", "show");
+		    }
+		    else {
+		        if (header.attr("data-show") == "show")
+		            header.animate({ height: 'hide' }, 250).attr("data-show", "hide");
+		    }
+>>>>>>> origin/master
 		});
 	});
 </script>
