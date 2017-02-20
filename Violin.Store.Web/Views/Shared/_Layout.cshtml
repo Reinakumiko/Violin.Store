@@ -1,17 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
-<<<<<<< HEAD
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title</title>
+	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+	@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
 	<link href="~/Content/style.css" rel="stylesheet" type="text/css" />
-=======
-    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
->>>>>>> origin/master
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+	<script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
     <nav class="nav nav-hideIcon" data-show="hide">
@@ -30,27 +26,23 @@
 	@RenderBody()
 
 	<script src="~/Scripts/jquery-1.11.0.js"></script>
-=======
-    @RenderBody()
-    <script src="~/Scripts/jquery-1.12.3.js"></script>
->>>>>>> origin/master
-    <script src="~/Scripts/bootstrap.min.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
 <script>
-<<<<<<< HEAD
-	$(document).ready(function () {
-		$(".jumpAnimate").click(function () {
-			var link = $(this).attr("href").replace("#", "");
+	$(document)
+		.ready(function () {
+			$(".jumpAnimate").click(function () {
+				var link = $(this).attr("href").replace("#", "");
 
-			var positionHeight = 0;
+				var positionHeight = 0;
 
-			if(link != "top")
-				positionHeight = $("div[name=" + link + "]").offset().top;
+				if (link != "top")
+					positionHeight = $("div[name=" + link + "]").offset().top;
 
-			console.log(positionHeight);
+				console.log(positionHeight);
 
-			$("body").animate({ scrollTop: positionHeight }, 600);
+				$("body").animate({ scrollTop: positionHeight }, 600);
 
 			return false;
 =======

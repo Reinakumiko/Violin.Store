@@ -142,16 +142,9 @@
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
-<<<<<<< HEAD
     <None Include="Scripts\jquery-1.11.0.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.0.js" />
     <Content Include="Scripts\jquery-1.11.0.min.js" />
-=======
-    <Content Include="Content\font\SourceHanSansSC-Light.otf" />
-    <None Include="Scripts\jquery-1.12.3.intellisense.js" />
-    <Content Include="Scripts\jquery-1.12.3.js" />
-    <Content Include="Scripts\jquery-1.12.3.min.js" />
->>>>>>> origin/master
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />
@@ -178,7 +171,7 @@
     <Content Include="Content\font-awesome\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\News\NewsDetail.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.12.3.min.map" />
+    <Content Include="Scripts\jquery-1.11.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
