@@ -29,22 +29,6 @@
 </body>
 </html>
 <script>
-	$(document)
-		.ready(function () {
-			$(".jumpAnimate").click(function () {
-				var link = $(this).attr("href").replace("#", "");
-
-				var positionHeight = 0;
-
-				if (link != "top")
-					positionHeight = $("div[name=" + link + "]").offset().top;
-
-				console.log(positionHeight);
-
-				$("body").animate({ scrollTop: positionHeight }, 600);
-
-			return false;
-=======
     $(document)
 		.ready(function () {
 		    $(".jumpAnimate").click(function () {
@@ -61,40 +45,6 @@
 
 		        return false;
 		    });
-		})
-		.on("scroll", function () {
-		    var header = $(".nav"), h = $(".container").offset().top;
-		    var hasClass = header.hasClass("nav-hideIcon");
-
-		    //console.log(document.body.scrollTop <= header.height());
-
-		    if (document.body.scrollTop <= header.outerHeight()) {
-		        header.addClass("nav-hideIcon");
-                
-		        if (header.attr("data-show") == "hide")
-		            header.show();
-		    }
-		    else {
-		        header.removeClass("nav-hideIcon");
-
-		        if (header.attr("data-show") == "hide")
-		            header.hide();
-		    }
-
-		    console.log(header.attr("data-show") == "hide");
-		    if (document.body.scrollTop >= h) {
-		        if (header.attr("data-show") == "hide")
-		            header.animate({ height: 'show' }, 250).attr("data-show", "show");
-		    }
-		    else {
-		        if (header.attr("data-show") == "show")
-		            header.animate({ height: 'hide' }, 250).attr("data-show", "hide");
-		    }
->>>>>>> origin/master
-		});
-	});
-				return false;
-			});
 		})
 		.on("scroll", function () {
 			console.log("on scroll debuge message");
