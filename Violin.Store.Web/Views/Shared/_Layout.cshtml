@@ -22,7 +22,6 @@
         </ul>
     </nav>
 
-<<<<<<< HEAD
 	@RenderBody()
 
 	<script src="~/Scripts/jquery-1.11.0.js"></script>
@@ -94,4 +93,34 @@
 >>>>>>> origin/master
 		});
 	});
+				return false;
+			});
+		})
+		.on("scroll", function () {
+			console.log("on scroll debuge message");
+
+			var header = $(".nav"), h = $(".container").offset().top;
+
+
+			header.hide();
+			header.show();
+
+			if (document.body.scrollTop >= h) {
+
+				isHide = true;
+
+				header.removeClass("nav-hideIcon");
+			}
+			else {
+				if (isHide)
+					header.hide();
+
+				header.addClass("nav-hideIcon");
+
+				if (isHide) {
+					header.show();
+					isHide = false;
+				}
+			}
+		});
 </script>
