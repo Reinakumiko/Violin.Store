@@ -40,7 +40,9 @@
 
 		        console.log(positionHeight);
 
-		        $("body").animate({ scrollTop: positionHeight }, 600);
+		        $("body").animate({
+		            scrollTop: positionHeight - 60
+		        }, 600);
 
 		        return false;
 		    });
@@ -49,29 +51,28 @@
 		    var header = $(".nav"), h = $(".container").offset().top;
 		    var hasClass = header.hasClass("nav-hideIcon");
 
-		    //console.log(document.body.scrollTop <= header.height());
-
-		    if (document.body.scrollTop <= header.outerHeight()) {
-		        header.addClass("nav-hideIcon");
-                
-		        if (header.attr("data-show") == "hide")
-		            header.show();
-		    }
-		    else {
-		        header.removeClass("nav-hideIcon");
-
-		        if (header.attr("data-show") == "hide")
-		            header.hide();
-		    }
-
-		    console.log(header.attr("data-show") == "hide");
 		    if (document.body.scrollTop >= h) {
-		        if (header.attr("data-show") == "hide")
-		            header.animate({ height: 'show' }, 250).attr("data-show", "show");
+		        if (hasClass)
+		            header.stop()
+                          .hide()
+                          .removeClass("nav-hideIcon")
+                          .animate({
+                              height: 'show'
+                          }, {
+                              speed: 200
+                          });
 		    }
 		    else {
-		        if (header.attr("data-show") == "show")
-		            header.animate({ height: 'hide' }, 250).attr("data-show", "hide");
+		        if (!hasClass)
+		            header.stop()
+                          .animate({
+                              height: 'hide'
+                          },
+                          200,
+                          'swing',
+                          function () {
+                              header.addClass("nav-hideIcon").show();
+                          });
 		    }
 		});
 </script>
