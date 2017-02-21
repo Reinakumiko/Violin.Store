@@ -10,17 +10,17 @@
 	<script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <nav class="nav nav-hideIcon" data-show="hide">
-        <ul>
-            <li class="sitelogo"><a href="."></a></li>
-            <li><a class="jumpAnimate" href="#top">TOP</a></li>
-            <li><a href="/News">NEWS</a></li>
-            <li><a class="jumpAnimate" href="#schedule">SCHEDULE</a></li>
-            <li><a class="jumpAnimate" href="#discography">DISCOGRAPHY</a></li>
-            <li><a class="jumpAnimate" href="#goods">GOODS</a></li>
-            <li><a class="jumpAnimate" href="#profile">PROFILE</a></li>
-        </ul>
-    </nav>
+	<nav class="nav nav-hideIcon">
+		<ul>
+			<li class="sitelogo"><a href="."></a></li>
+			<li><a class="jumpAnimate" href="#top">TOP</a></li>
+			<li><a href="/News">NEWS</a></li>
+			<li><a class="jumpAnimate" href="#schedule">SCHEDULE</a></li>
+			<li><a class="jumpAnimate" href="#discography">DISCOGRAPHY</a></li>
+			<li><a class="jumpAnimate" href="#goods">GOODS</a></li>
+			<li><a class="jumpAnimate" href="#profile">PROFILE</a></li>
+		</ul>
+	</nav>
 
 	@RenderBody()
 
@@ -29,22 +29,22 @@
 </body>
 </html>
 <script>
-    $(document)
+	$(document)
 		.ready(function () {
-		    $(".jumpAnimate").click(function () {
-		        var link = $(this).attr("href").replace("#", "");
+			$(".jumpAnimate").click(function () {
+				var link = $(this).attr("href").replace("#", "");
 
-		        var positionHeight = 0;
+				var positionHeight = 0;
 
-		        if (link != "top")
-		            positionHeight = $("div[name=" + link + "]").offset().top;
+				if (link != "top")
+					positionHeight = $("div[name=" + link + "]").offset().top;
 
-		        console.log(positionHeight);
+				console.log(positionHeight);
 
-		        $("body").animate({ scrollTop: positionHeight }, 600);
+				$("body").animate({ scrollTop: positionHeight }, 600);
 
-		        return false;
-		    });
+				return false;
+			});
 		})
 		.on("scroll", function () {
 			console.log("on scroll debuge message");
