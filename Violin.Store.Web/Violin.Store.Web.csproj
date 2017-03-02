@@ -143,9 +143,9 @@
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\font\SourceHanSansSC-Light.otf" />
-    <None Include="Scripts\jquery-1.11.0.intellisense.js" />
-    <Content Include="Scripts\jquery-1.11.0.js" />
-    <Content Include="Scripts\jquery-1.11.0.min.js" />
+    <None Include="Scripts\jquery-1.12.3.intellisense.js" />
+    <Content Include="Scripts\jquery-1.12.3.js" />
+    <Content Include="Scripts\jquery-1.12.3.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />
@@ -172,7 +172,7 @@
     <Content Include="Content\font-awesome\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\News\NewsDetail.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.11.0.min.map" />
+    <Content Include="Scripts\jquery-1.12.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -187,10 +187,6 @@
     <Folder Include="Views\Store\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\GitHub\wysiwyg-editor-dotnet-sdk\src\FroalaEditorSDK.xproj">
-      <Project>{93d55b43-f7cb-437a-af59-8d513a19d5e8}</Project>
-      <Name>FroalaEditorSDK</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Violin.Store.Classes\Violin.Store.Classes.csproj">
       <Project>{bfaa40b3-475c-4166-a69f-eacb880cd8f5}</Project>
       <Name>Violin.Store.Classes</Name>

@@ -1,0 +1,63 @@
+﻿@model Violin.Store.Classes.Schedule
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div>
+	<h2>移除日程</h2>
+	<div>你确定要删除这条日程吗?</div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.EndTime)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.EndTime)
+		</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BangumiName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BangumiName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BangumiUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BangumiUrl)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="删除条目" class="btn btn-danger" />
+			<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
+        </div>
+    }
+</div>

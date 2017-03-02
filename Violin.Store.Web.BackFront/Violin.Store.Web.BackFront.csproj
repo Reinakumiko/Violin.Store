@@ -53,10 +53,11 @@
     </Reference>
     <Reference Include="FroalaEditorSDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\GitHub\wysiwyg-editor-dotnet-sdk\src\bin\Debug\net452\FroalaEditorSDK.dll</HintPath>
+      <HintPath>..\wysiwyg-editor-dotnet-sdk\bin\Debug\net452\FroalaEditorSDK.dll</HintPath>
     </Reference>
-    <Reference Include="Magick.NET-Q16-AnyCPU">
-      <HintPath>..\..\..\..\GitHub\wysiwyg-editor-dotnet-sdk\src\bin\Debug\net452\Magick.NET-Q16-AnyCPU.dll</HintPath>
+    <Reference Include="Magick.NET-Q16-AnyCPU, Version=7.0.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\wysiwyg-editor-dotnet-sdk\bin\Debug\net452\Magick.NET-Q16-AnyCPU.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -211,6 +212,15 @@
     <Content Include="Content\froala-editor\js\plugins\table.min.js" />
     <Content Include="Content\froala-editor\js\plugins\url.min.js" />
     <Content Include="Content\froala-editor\js\plugins\video.min.js" />
+    <Content Include="Content\laydate\laydate.js" />
+    <Content Include="Content\laydate\need\laydate.css" />
+    <Content Include="Content\laydate\need\style.min.css" />
+    <Content Include="Content\laydate\skins\dahong\icon.png" />
+    <Content Include="Content\laydate\skins\dahong\laydate.css" />
+    <Content Include="Content\laydate\skins\default\icon.png" />
+    <Content Include="Content\laydate\skins\default\laydate.css" />
+    <Content Include="Content\laydate\skins\molv\icon.png" />
+    <Content Include="Content\laydate\skins\molv\laydate.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
@@ -247,9 +257,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DiscographiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\IncludedTracksController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\SchedulesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,6 +278,21 @@
     <Content Include="Views\News\Details.cshtml" />
     <Content Include="Views\News\Edit.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Schedules\Create.cshtml" />
+    <Content Include="Views\Schedules\Delete.cshtml" />
+    <Content Include="Views\Schedules\Details.cshtml" />
+    <Content Include="Views\Schedules\Edit.cshtml" />
+    <Content Include="Views\Schedules\Index.cshtml" />
+    <Content Include="Views\Discographies\Create.cshtml" />
+    <Content Include="Views\Discographies\Delete.cshtml" />
+    <Content Include="Views\Discographies\Details.cshtml" />
+    <Content Include="Views\Discographies\Edit.cshtml" />
+    <Content Include="Views\Discographies\Index.cshtml" />
+    <Content Include="Views\IncludedTracks\Create.cshtml" />
+    <Content Include="Views\IncludedTracks\Delete.cshtml" />
+    <Content Include="Views\IncludedTracks\Details.cshtml" />
+    <Content Include="Views\IncludedTracks\Edit.cshtml" />
+    <Content Include="Views\IncludedTracks\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

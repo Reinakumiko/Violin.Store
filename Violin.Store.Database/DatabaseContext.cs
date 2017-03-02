@@ -28,7 +28,7 @@ namespace Violin.Store.Database
 		/// <summary>
 		/// 个人简介表
 		/// </summary>
-		public DbSet<Profile> Profile { get; set; }
+		//public DbSet<Profile> Profile { get; set; }
 
 		/// <summary>
 		/// 日程表
@@ -39,6 +39,11 @@ namespace Violin.Store.Database
 		/// 账户表
 		/// </summary>
 		public DbSet<UserAccount> Account { get; set; }
+
+		/// <summary>
+		/// 曲目表
+		/// </summary>
+		public DbSet<IncludedTracks> IncludedTracks { get; set; }
 
 
 		public DatabaseContext()

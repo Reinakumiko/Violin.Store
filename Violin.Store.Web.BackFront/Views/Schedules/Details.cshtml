@@ -1,0 +1,58 @@
+﻿@model Violin.Store.Classes.Schedule
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+	<h2>日程详情</h2>
+    <div>日程的详细内容</div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.EndTime)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.EndTime)
+		</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BangumiName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BangumiName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BangumiUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BangumiUrl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+	<a href="./Edit/@Model.ScheduleId" role="button" class="btn btn-primary">编辑条目</a>
+	<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
+</p>

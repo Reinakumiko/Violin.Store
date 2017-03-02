@@ -55,6 +55,34 @@
     <Compile Include="Migrations\201702150253097_Init.Designer.cs">
       <DependentUpon>201702150253097_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702270648173_ModifyScheduleClass.cs" />
+    <Compile Include="Migrations\201702270648173_ModifyScheduleClass.Designer.cs">
+      <DependentUpon>201702270648173_ModifyScheduleClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270823121_ModifyTables.cs" />
+    <Compile Include="Migrations\201702270823121_ModifyTables.Designer.cs">
+      <DependentUpon>201702270823121_ModifyTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270835194_AddPriceTable.cs" />
+    <Compile Include="Migrations\201702270835194_AddPriceTable.Designer.cs">
+      <DependentUpon>201702270835194_AddPriceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270904178_RemovePrice.cs" />
+    <Compile Include="Migrations\201702270904178_RemovePrice.Designer.cs">
+      <DependentUpon>201702270904178_RemovePrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270943477_ModifyPrice.cs" />
+    <Compile Include="Migrations\201702270943477_ModifyPrice.Designer.cs">
+      <DependentUpon>201702270943477_ModifyPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270947372_ModifyDiscography.cs" />
+    <Compile Include="Migrations\201702270947372_ModifyDiscography.Designer.cs">
+      <DependentUpon>201702270947372_ModifyDiscography.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270949312_RemoveProfile.cs" />
+    <Compile Include="Migrations\201702270949312_RemoveProfile.Designer.cs">
+      <DependentUpon>201702270949312_RemoveProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,6 +101,27 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702150253097_Init.resx">
       <DependentUpon>201702150253097_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270648173_ModifyScheduleClass.resx">
+      <DependentUpon>201702270648173_ModifyScheduleClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270823121_ModifyTables.resx">
+      <DependentUpon>201702270823121_ModifyTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270835194_AddPriceTable.resx">
+      <DependentUpon>201702270835194_AddPriceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270904178_RemovePrice.resx">
+      <DependentUpon>201702270904178_RemovePrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270943477_ModifyPrice.resx">
+      <DependentUpon>201702270943477_ModifyPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270947372_ModifyDiscography.resx">
+      <DependentUpon>201702270947372_ModifyDiscography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270949312_RemoveProfile.resx">
+      <DependentUpon>201702270949312_RemoveProfile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
