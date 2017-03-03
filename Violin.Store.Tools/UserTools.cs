@@ -27,5 +27,15 @@ namespace Violin.Store.Tools
 
             return Encoding.UTF8.GetString(sha1.ComputeHash(saltBytes.ToArray()));
         }
+
+        /// <summary>
+        /// 为账户生成混淆盐
+        /// </summary>
+        /// <param name="account">需要进行生成混淆盐的账户</param>
+        /// <returns>所生成的混淆盐字符串</returns>
+        public static string GenerateSalt(this UserAccount account)
+        {
+            return account.GetHashCode().ToString("x6");
+        }
     }
 }

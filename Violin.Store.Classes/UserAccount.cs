@@ -43,6 +43,9 @@ namespace Violin.Store.Classes
         /// </summary>
 		public string PhoneNumber { get; set; }
 
+        /// <summary>
+        /// 该用户的收货地址
+        /// </summary>
         public List<ReceveAddress> ReceiveAddresses { get; set; }
     }
 }

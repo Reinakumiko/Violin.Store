@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Violin.Store.Classes
 {
+    /// <summary>
+    /// 用户的收货地址
+    /// </summary>
     public class ReceveAddress
     {
         /// <summary>
