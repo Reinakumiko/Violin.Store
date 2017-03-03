@@ -187,10 +187,6 @@
     <Folder Include="Views\Store\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\GitHub\wysiwyg-editor-dotnet-sdk\src\FroalaEditorSDK.xproj">
-      <Project>{93d55b43-f7cb-437a-af59-8d513a19d5e8}</Project>
-      <Name>FroalaEditorSDK</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Violin.Store.Classes\Violin.Store.Classes.csproj">
       <Project>{bfaa40b3-475c-4166-a69f-eacb880cd8f5}</Project>
       <Name>Violin.Store.Classes</Name>

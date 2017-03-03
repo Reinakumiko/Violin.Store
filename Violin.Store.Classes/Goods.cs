@@ -20,7 +20,7 @@ namespace Violin.Store.Classes
 		/// <summary>
 		/// 商品价格
 		/// </summary>
-		public SalePrice Price { get; set; }
+		public double Price { get; set; }
 
 		/// <summary>
 		/// 商品备注

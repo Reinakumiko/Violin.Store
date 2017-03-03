@@ -15,9 +15,24 @@ namespace Violin.Store.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.News = new List<News>(); // database.News.OrderByDescending(news => news.ReleaseTime).Take(5).ToList();
+			//获得最新前五条的新闻内容
+            ViewBag.News = database.News.OrderByDescending(news => news.ReleaseTime).Take(5).ToList();
 
-            return View();
+			//获得最新电视日程前五条的内容
+			ViewBag.ScheduleTV = database.Schedule
+										 .Where(schedule => schedule.Type == ScheduleType.TV)
+										 .OrderByDescending(schedule => schedule.StartTime)
+										 .Take(5)
+										 .ToList();
+
+			//获得最新广播日程的前五条内容
+			ViewBag.ScheduleRadio = database.Schedule
+											.Where(schedule => schedule.Type == ScheduleType.Radio)
+											.OrderByDescending(schedule => schedule.ScheduleId)
+											.Take(5)
+											.ToList();
+
+			return View();
         }
     }
 }

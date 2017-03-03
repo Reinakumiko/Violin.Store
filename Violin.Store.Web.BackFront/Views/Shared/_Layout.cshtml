@@ -7,9 +7,12 @@
 	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 	<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<script src="~/Scripts/jquery-1.12.3.js"></script>
 	<script src="~/Scripts/modernizr-2.6.2.js"></script>
-	<script src="~/Scripts/jquery-1.11.0.js"></script>
 	<script src="~/Scripts/bootstrap.min.js"></script>
+	<script src="~/Content/laydate/laydate.js"></script>
+	<script src="~/Scripts/jquery.validate.min.js"></script>
+	<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
 	<!-- 文本编辑器部分样式 -->
 	<link rel="stylesheet" href="~/Content/froala-editor/css/froala_editor.css">
@@ -90,6 +93,10 @@
 			imageUploadURL: '/Image/Upload',
 			imageManagerLoadURL: '/Image/Load',
 			imageManagerDeleteURL: "/Image/Delete",
+		});
+
+		$("input.dateTime").click(function () {
+			laydate({ istime: true, format: 'YYYY-MM-DD hh:mm:ss' });
 		});
 	});
 </script>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Violin.Store.Classes.Schedule>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>日程列表</h2>
+
+<p>
+	@Html.ActionLink("新建条目", "Create", null, new { role = "button", @class = "btn btn-primary" })
+</p>
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Type)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.StartTime)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.EndTime)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.BangumiName)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Type)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.StartTime)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.EndTime)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.BangumiName)
+			</td>
+			<td>
+				@Html.ActionLink("编辑", "Edit", new { id = item.ScheduleId }) |
+				@Html.ActionLink("详情", "Details", new { id = item.ScheduleId }) |
+				@Html.ActionLink("删除", "Delete", new { id = item.ScheduleId }, new { role = "button", @class = "btn btn-danger btn-xs" })
+			</td>
+		</tr>
+	}
+
+</table>

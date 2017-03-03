@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Violin.Store.Tools", "Violi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Violin.Store.Web.BackFront", "Violin.Store.Web.BackFront\Violin.Store.Web.BackFront.csproj", "{FF74013C-FFF1-43A5-8CCD-8A2EDBCAA0C9}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FroalaEditorSDK", "..\..\..\GitHub\wysiwyg-editor-dotnet-sdk\src\FroalaEditorSDK.xproj", "{93D55B43-F7CB-437A-AF59-8D513A19D5E8}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FroalaEditorSDK", "wysiwyg-editor-dotnet-sdk\FroalaEditorSDK.xproj", "{93D55B43-F7CB-437A-AF59-8D513A19D5E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
