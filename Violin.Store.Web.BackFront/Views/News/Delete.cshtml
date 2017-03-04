@@ -4,10 +4,9 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>确定要删除这条新闻吗?</h3>
 <div>
+	<h2>移除新闻</h2>
+	<div>确定要删除这条新闻吗?</div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -48,7 +47,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="删除" class="btn btn-danger" />
+            <input type="submit" value="删除条目" class="btn btn-danger" />
 			<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
         </div>
     }

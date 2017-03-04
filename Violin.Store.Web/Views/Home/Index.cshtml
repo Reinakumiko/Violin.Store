@@ -35,39 +35,84 @@
 				<div class="scheduleType scheduleType-tv">TV</div>
 				@foreach (Schedule schedule in ViewBag.ScheduleTV)
 				{
-					<div class="scheduleDetails">
-						<div class="scheduleDateTime">@schedule.StartTime ~ @schedule.EndTime</div>
-						<div class="scheduleTitle">@schedule.BangumiName</div>
-						<div class="scheduleUrl">
-							<span class="schedulePrefix">【番組HP】</span>
-							<a class="scheduleLink" target="_blank" href="@schedule.BangumiUrl">@schedule.BangumiUrl</a>
-						</div>
+				<div class="scheduleDetails">
+					<div class="scheduleDateTime">@schedule.StartTime ~ @schedule.EndTime</div>
+					<div class="scheduleTitle">@schedule.BangumiName</div>
+					<div class="scheduleUrl">
+						<span class="schedulePrefix">【番組HP】</span>
+						<a class="scheduleLink" target="_blank" href="@schedule.BangumiUrl">@schedule.BangumiUrl</a>
 					</div>
+				</div>
 				}
 			</div>
 			<div class="schedule-radio items">
 				<div class="scheduleType scheduleType-radio">RADIO</div>
 				@foreach (Schedule schedule in ViewBag.ScheduleRadio)
 				{
-					<div class="scheduleDetails">
-						<div class="scheduleTitle">@schedule.BangumiName</div>
-						<div class="scheduleUrl">
-							<span class="schedulePrefix">【HP】</span>
-							<a class="scheduleLink" target="_blank" href="@schedule.BangumiUrl">@schedule.BangumiUrl</a>
-						</div>
+				<div class="scheduleDetails">
+					<div class="scheduleTitle">@schedule.BangumiName</div>
+					<div class="scheduleUrl">
+						<span class="schedulePrefix">【HP】</span>
+						<a class="scheduleLink" target="_blank" href="@schedule.BangumiUrl">@schedule.BangumiUrl</a>
 					</div>
+				</div>
 				}
 			</div>
 		</div>
 	</div>
 	<div name="discography" class="blocks discography">
-
+		<div class="title">DISCOGRAPHY</div>
+		<div class="list">
+			@foreach (Discography disco in ViewBag.Discography)
+			{
+				<div class="items">
+					<div class="discographyDetails">
+						<div class="discoItem image">
+							<img src="@disco.CoverImage">
+						</div>
+						<div class="discoItem info">
+							<div class="infoItem subtitle discoSubtitle">@disco.Subtitle</div>
+							<div class="infoItem title">@disco.Title</div>
+							<div class="infoItem saleTime">@($"{disco.OnSaleTime.ToString("yyyy.MM.dd")} On Sale")</div>
+							<div class="infoItem description">@Html.Raw(disco.Description)</div>
+							<div class="infoItem productInfo">
+								<div>产品编号：@disco.ProductNumber</div>
+								<div>价格：@disco.Price.ToString("f2")</div>
+								<div>收录数：@disco.IncludedCount 首</div>
+							</div>
+							<div class="infoItem includeTracks">
+								<div class="includeTitle subtitle">收录曲目</div>
+								<table style="width: 100%">
+									@foreach (IncludedTracks tracks in disco.Tracks)
+									{
+										<tr>
+											<td>@tracks.Track</td>
+											<td>@tracks.Name</td>
+											<td>作词：@tracks.LyricsBy</td>
+											<td>作曲：@tracks.Composer</td>
+											<td>编曲：@tracks.Arranger</td>
+										</tr>
+									}
+								</table>
+							</div>
+							<div class="infoItem giveways">
+								<div class="givewayTitle subtitle">DVD附赠礼品</div>
+								<div class="givewayList">
+									@foreach (Giveaway giveway in disco.Giveaway)
+									{
+										<div class="givewayItem">@giveway.Name</div>
+									}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
 	</div>
-
 	<div name="goods" class="blocks goods">
 
 	</div>
-
 	<div name="profile" class="blocks profile">
 		<div class="title">PROFILE</div>
 		<div class="items">

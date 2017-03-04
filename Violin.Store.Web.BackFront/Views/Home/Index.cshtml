@@ -1,0 +1,115 @@
+﻿
+@{
+	ViewBag.Title = "Index";
+}
+
+<style>
+	a {
+		color: #000;
+	}
+
+	.mainContainer {
+		font-size: 120%;
+	}
+
+	.items {
+		margin: 20px auto;
+		color: #000;
+	}
+
+	.title {
+		margin: 20px auto;
+		margin-top: 50px;
+		font-size: 1.3em;
+	}
+
+	.blocks {
+		margin: 20px auto;
+	}
+
+	.blocks .title {
+		font-weight: 300;
+		font-size: 48px;
+	}
+
+	.blocks .items {
+		background-color: #f2f2f2;
+	}
+
+	.blocks .items .itemContainer {
+		padding: 20px 40px;
+	}
+
+	.news .newsDetails {
+		margin: 10px 5px;
+	}
+
+	.news .newsTitle {
+		height: 100%;
+	}
+
+	.news .newsTitle-ContentTitle {
+		width: 100%;
+		padding: 20px 0px;
+		font-size: 1.1em;
+		border-bottom: 1px solid #999;
+	}
+
+	.news .newsInfo {
+		display: inline-block;
+		vertical-align: middle;
+		text-align: left;
+		height: 100%;
+	}
+
+	.news .newsDetails .newsTitle {
+		color: #000;
+		font-size: 90%;
+		margin-left: 20px;
+	}
+
+	.news .newsLink {
+		padding: 25px;
+		display: block;
+		background: center no-repeat;
+		background-image: url(../../Content/img/arrow_next.png);
+		background-position: 97%;
+	}
+</style>
+
+
+<div class="mainContainer">
+	<div class="title">Violin.Store 后台管理主页</div>
+	<div class="blocks news">
+		<div class="items">
+			<a class="newsLink" href="/News">
+				<div class="newsInfo">新闻管理模块</div>
+			</a>
+		</div>
+		<div class="items">
+			<a class="newsLink" href="/Schedules">
+				<div class="newsInfo">日程管理模块</div>
+			</a>
+		</div>
+		<div class="items">
+			<a class="newsLink" href="/Discographies">
+				<div class="newsInfo">专辑管理模块</div>
+			</a>
+		</div>
+		<div class="items">
+			<a class="newsLink" href="/IncludedTracks">
+				<div class="newsInfo">收录曲管理模块</div>
+			</a>
+		</div>
+		<div class="items">
+			<a class="newsLink" href="/Store">
+				<div class="newsInfo">商品管理模块</div>
+			</a>
+		</div>
+		<div class="items">
+			<a class="newsLink" href="/Users">
+				<div class="newsInfo">用户管理模块</div>
+			</a>
+		</div>
+	</div>
+</div>

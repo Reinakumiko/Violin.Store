@@ -29,8 +29,8 @@ namespace Violin.Store.Web.BackFront.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            IncludedTracks includedTracks = db.IncludedTracks.Find(id);
-            if (includedTracks == null)
+            IncludedTracks includedTracks = db.IncludedTracks.Include(i => i.Discography).Where(i => i.Track == id).FirstOrDefault();
+			if (includedTracks == null)
             {
                 return HttpNotFound();
             }
@@ -58,7 +58,7 @@ namespace Violin.Store.Web.BackFront.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DiscographyId = new SelectList(db.Discography, "DiscographyId", "CoverImage", includedTracks.DiscographyId);
+            ViewBag.DiscographyId = new SelectList(db.Discography, "DiscographyId", "Title", includedTracks.DiscographyId);
             return View(includedTracks);
         }
 
@@ -74,7 +74,7 @@ namespace Violin.Store.Web.BackFront.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.DiscographyId = new SelectList(db.Discography, "DiscographyId", "CoverImage", includedTracks.DiscographyId);
+            ViewBag.DiscographyId = new SelectList(db.Discography, "DiscographyId", "Title", includedTracks.DiscographyId);
             return View(includedTracks);
         }
 
@@ -91,7 +91,7 @@ namespace Violin.Store.Web.BackFront.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DiscographyId = new SelectList(db.Discography, "DiscographyId", "CoverImage", includedTracks.DiscographyId);
+            ViewBag.DiscographyId = new SelectList(db.Discography, "DiscographyId", "Title", includedTracks.DiscographyId);
             return View(includedTracks);
         }
 

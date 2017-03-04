@@ -5,10 +5,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>专辑列表</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("新建条目", "Create", null, new { role = "button", @class = "btn btn-primary" })
+	<a href="/" role="button" class="btn btn-info" style="margin-left: 10px;">返回主页</a>
 </p>
 <table class="table">
     <tr>
