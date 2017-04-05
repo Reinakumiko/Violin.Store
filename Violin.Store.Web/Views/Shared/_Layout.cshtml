@@ -8,9 +8,11 @@
     @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
     <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-1.12.3.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
-    <nav class="nav nav-hideIcon" data-show="hide">
+    <nav class="nav nav-hideIcon" data-show="hide" data-displayAnimate="true">
         <ul>
             <li class="sitelogo"><a href="."></a></li>
             <li><a class="jumpAnimate" href="#top">TOP</a></li>
@@ -19,12 +21,11 @@
             <li><a class="jumpAnimate" href="#discography">DISCOGRAPHY</a></li>
             <li><a class="jumpAnimate" href="#goods">GOODS</a></li>
             <li><a class="jumpAnimate" href="#profile">PROFILE</a></li>
+            <li><a href="/Account">MEMBER CENTER</a></li>
         </ul>
     </nav>
 
     @RenderBody()
-    <script src="~/Scripts/jquery-1.12.3.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
 <script>
@@ -49,6 +50,10 @@
 		})
 		.on("scroll", function () {
 		    var header = $(".nav"), h = $(".container").offset().top;
+
+		    if (header.attr("data-displayAnimate") != "true")
+		        return;
+
 		    var hasClass = header.hasClass("nav-hideIcon");
 
 		    if (document.body.scrollTop >= h) {

@@ -44,6 +44,11 @@ namespace Violin.Store.Classes
 		public string PhoneNumber { get; set; }
 
         /// <summary>
+        /// 账号管理权限
+        /// </summary>
+        public UserAccount Access { get; set; }
+
+        /// <summary>
         /// 该用户的收货地址
         /// </summary>
         public List<ReceveAddress> ReceiveAddresses { get; set; }

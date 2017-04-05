@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessFlags\UserAccess.cs" />
     <Compile Include="Artister.cs" />
     <Compile Include="Discography.cs" />
     <Compile Include="Giveways.cs" />
@@ -50,7 +51,6 @@
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceveAddress.cs" />
-    <Compile Include="SalePrice.cs" />
     <Compile Include="Schedule.cs" />
     <Compile Include="UserAccount.cs" />
   </ItemGroup>

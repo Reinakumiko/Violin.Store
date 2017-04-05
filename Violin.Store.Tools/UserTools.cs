@@ -19,7 +19,7 @@ namespace Violin.Store.Tools
         {
             MD5 md5 = MD5.Create();
 
-            var md5Result = md5.ComputeHash(Encoding.UTF8.GetBytes(account.Password+account.Salt));
+            var md5Result = md5.ComputeHash(Encoding.UTF8.GetBytes(account.Password + account.Salt));
             SHA1 sha1 = SHA1.Create();
 
             var saltBytes = md5Result.ToList();
