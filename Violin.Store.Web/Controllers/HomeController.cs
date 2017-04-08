@@ -32,6 +32,12 @@ namespace Violin.Store.Web.Controllers
 											.Take(5)
 											.ToList();
 
+			//获取最新的两张专辑内容
+			ViewBag.Discography = database.Discography
+										  .OrderByDescending(dis => dis.DiscographyId)
+										  .Take(2)
+										  .ToList();
+
 			return View();
         }
     }

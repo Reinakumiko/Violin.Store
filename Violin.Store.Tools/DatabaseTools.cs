@@ -18,7 +18,7 @@ namespace Violin.Store.Tools
         /// <returns>该值已存在时为真，否则反之。</returns>
         public static bool CheckRepeat<T>(this DbSet<T> set, Func<T, bool> func) where T : class
         {
-            return set.Where(i => func(i)).Count() > 0;
+            return set.Where(i => func.Invoke(i)).Count() > 0;
         }
     }
 }

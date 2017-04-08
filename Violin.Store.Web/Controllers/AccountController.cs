@@ -64,7 +64,7 @@ namespace Violin.Store.Web.Controllers
             var dbUser = _database.Account.Where(u => u.Account == user.Account).FirstOrDefault();
             user.Salt = dbUser?.Salt;
 
-            var throwResult = user.EncryptPassword() == dbUser?.Password
+            var throwResult = user == dbUser
                             ? new ViewThrow() { StatusCode = HttpStatusCode.OK, Message = "用户登录。" }
                             : new ViewThrow() { StatusCode = HttpStatusCode.InternalServerError, Message = "用户或密码错误，请检查核对之后再试。" };
             

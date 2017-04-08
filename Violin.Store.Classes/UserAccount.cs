@@ -6,7 +6,7 @@ namespace Violin.Store.Classes
 	/// <summary>
 	/// 用户的账号信息
 	/// </summary>
-	public class UserAccount
+	public partial class UserAccount
 	{
 		/// <summary>
 		/// 以作为数据库表的主键
