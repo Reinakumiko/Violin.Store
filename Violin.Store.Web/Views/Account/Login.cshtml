@@ -71,7 +71,13 @@
     	};
 
     	$.post("Login", obj, function (data) {
-    		console.log(data);
+    	    if (data.result)
+    	    {
+    	        location.href = "/";
+    	        return;
+    	    }
+
+    	    alert(data.msg);
     	}, "json");
     }
 </script>

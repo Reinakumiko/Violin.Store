@@ -12,19 +12,22 @@ namespace Violin.Store.Classes
 		/// </summary>
 		[Key] public int ProductId { get; set; }
 
-		/// <summary>
-		/// 商品名称
-		/// </summary>
-		public string Name { get; set; }
+        /// <summary>
+        /// 商品名称
+        /// </summary>
+        [Display(Name = "商品名称")]
+        public string Name { get; set; }
 
-		/// <summary>
-		/// 商品价格
-		/// </summary>
-		public double Price { get; set; }
+        /// <summary>
+        /// 商品价格
+        /// </summary>
+        [Display(Name = "商品价格")]
+        public double Price { get; set; }
 
-		/// <summary>
-		/// 商品备注
-		/// </summary>
-		public string Note { get; set; }
+        /// <summary>
+        /// 商品备注
+        /// </summary>
+        [Display(Name = "商品备注")]
+        public string Note { get; set; }
 	}
 }

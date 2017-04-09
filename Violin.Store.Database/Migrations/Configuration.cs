@@ -1,7 +1,7 @@
-using System;
-using System.Data.Entity;
+using MySql.Data.Entity;
 using System.Data.Entity.Migrations;
-using System.Linq;
+using Violin.Store.Classes;
+using Violin.Store.Tools;
 
 namespace Violin.Store.Database.Migrations
 {
@@ -10,6 +10,9 @@ namespace Violin.Store.Database.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            var sqlGenerator = new MySqlMigrationSqlGenerator();
+
+            SetSqlGenerator("MySql.Data.MySqlClient", sqlGenerator);
         }
 
         protected override void Seed(DatabaseContext context)
@@ -26,6 +29,19 @@ namespace Violin.Store.Database.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            var root = new UserAccount
+            {
+                Account = "root",
+                EmailAddress = "root@sayaka.com",
+                Nickname = "Root",
+                Access = Classes.AccessFlags.UserAccess.Root
+            };
+
+            root.Salt = root.GenerateSalt();
+            root.Password = root.EncryptPassword();
+
+            context.Account.AddOrUpdate(root);
         }
     }
 }

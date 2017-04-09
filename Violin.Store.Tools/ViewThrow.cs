@@ -13,6 +13,7 @@ namespace Violin.Store.Tools
     public class ViewThrow
     {
         public HttpStatusCode StatusCode { get; set; } = HttpStatusCode.BadRequest;
+        public bool Result { get; set; } = false;
         public string Message { get; set; } = "用户发送了一个错误的请求。";
     }
 }

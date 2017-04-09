@@ -80,7 +80,7 @@ img {
     list-style: none;
 }
 
-.nav > ul > li > a {
+.nav > ul > li a {
     display: block;
     color: #000;
     opacity: .8;    
@@ -88,12 +88,59 @@ img {
     text-decoration: none;
 }
 
-.nav > ul > li > a:hover {
+.nav > ul > li a:hover {
     opacity: 1;
 }
 
-.nav-hideIcon > ul > li > a {
+.nav-hideIcon > ul > li a {
     color: #fff;
+}
+
+
+.memberMenu {
+    position: relative;
+}
+
+.memberMenu .menuPanel {
+    left: -20px;
+    text-align: left;
+    position: absolute;
+    transition: .6s;
+    height: 0px;
+    overflow: hidden;
+    background-color:  white;
+}
+
+.nav-hideIcon .menuPanel {
+    background-color: transparent;
+    border: none;
+}
+
+.memberMenu:hover .menuPanel {
+    height: 90px;
+}
+
+.memberMenu .menuOptions{
+    margin-top: 16px;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-top: none;
+}
+
+.nav-hideIcon .memberMenu .menuOptions {
+    border: none;
+    margin: 0px;
+}
+
+.menuPanel ul,
+.menuPanel li {
+    padding: 0px;
+    margin: 0px;
+}
+
+.menuPanel li {
+    font-size: 90%;
+    padding: 5px 10px;
+    display: block;
 }
 
 .mainvisual{

@@ -46,7 +46,7 @@ namespace Violin.Store.Web.Controllers
 
             //将表缓存写入到数据库表，且返回结果与提示消息。
             var throwResult = _database.SaveChanges() > 0
-                            ? new ViewThrow() { StatusCode = HttpStatusCode.OK, Message = "账号注册成功。" }
+                            ? new ViewThrow() { StatusCode = HttpStatusCode.OK, Result = true, Message = "账号注册成功。" }
                             : new ViewThrow() { StatusCode = HttpStatusCode.InternalServerError, Message = "注册用户处理出错，请稍后再试。" };
 
             //
@@ -65,9 +65,14 @@ namespace Violin.Store.Web.Controllers
             user.Salt = dbUser?.Salt;
 
             var throwResult = user == dbUser
-                            ? new ViewThrow() { StatusCode = HttpStatusCode.OK, Message = "用户登录。" }
+                            ? new ViewThrow() { StatusCode = HttpStatusCode.OK, Result = true, Message = "用户登录。" }
                             : new ViewThrow() { StatusCode = HttpStatusCode.InternalServerError, Message = "用户或密码错误，请检查核对之后再试。" };
             
+            if(throwResult.Result)
+            {
+                this.Session["user"] = dbUser;
+            }
+
             return this.RequestResult(throwResult);
         }
 
@@ -85,7 +90,7 @@ namespace Violin.Store.Web.Controllers
 
             //将表缓存写入到数据库表，且返回结果与提示消息。
             var throwResult = _database.SaveChanges() > 0
-                            ? new ViewThrow() { StatusCode = HttpStatusCode.OK, Message = "账号密码重置成功。" }
+                            ? new ViewThrow() { StatusCode = HttpStatusCode.OK, Result = true, Message = "账号密码重置成功。" }
                             : new ViewThrow() { StatusCode = HttpStatusCode.InternalServerError, Message = "密码重置处理出错，请稍后再试。" };
 
             //

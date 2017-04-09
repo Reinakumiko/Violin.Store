@@ -31,33 +31,42 @@
 	<div name="schedule" class="blocks schedule">
 		<div class="title">SCHEDULE</div>
 		<div class="list">
-			<div class="schedule-tv items">
-				<div class="scheduleType scheduleType-tv">TV</div>
-				@foreach (Schedule schedule in ViewBag.ScheduleTV)
-				{
-				<div class="scheduleDetails">
-					<div class="scheduleDateTime">@schedule.StartTime ~ @schedule.EndTime</div>
-					<div class="scheduleTitle">@schedule.BangumiName</div>
-					<div class="scheduleUrl">
-						<span class="schedulePrefix">【番組HP】</span>
-						<a class="scheduleLink" target="_blank" href="@schedule.BangumiUrl">@schedule.BangumiUrl</a>
-					</div>
-				</div>
-				}
-			</div>
-			<div class="schedule-radio items">
-				<div class="scheduleType scheduleType-radio">RADIO</div>
-				@foreach (Schedule schedule in ViewBag.ScheduleRadio)
-				{
-				<div class="scheduleDetails">
-					<div class="scheduleTitle">@schedule.BangumiName</div>
-					<div class="scheduleUrl">
-						<span class="schedulePrefix">【HP】</span>
-						<a class="scheduleLink" target="_blank" href="@schedule.BangumiUrl">@schedule.BangumiUrl</a>
-					</div>
-				</div>
-				}
-			</div>
+            @{
+                if (ViewBag.ScheduleTV.Count > 0)
+                {
+                    <div class="schedule-tv items">
+                        <div class="scheduleType scheduleType-tv">TV</div>
+                        @foreach (Schedule schedule in ViewBag.ScheduleTV)
+                        {
+                            <div class="scheduleDetails">
+                                <div class="scheduleDateTime">@schedule.StartTime ~ @schedule.EndTime</div>
+                                <div class="scheduleTitle">@schedule.BangumiName</div>
+                                <div class="scheduleUrl">
+                                    <span class="schedulePrefix">【番組HP】</span>
+                                    <a class="scheduleLink" target="_blank" href="@schedule.BangumiUrl">@schedule.BangumiUrl</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+
+                if (ViewBag.ScheduleRadio.Count > 0)
+                {
+                    <div class="schedule-radio items">
+                        <div class="scheduleType scheduleType-radio">RADIO</div>
+                        @foreach (Schedule schedule in ViewBag.ScheduleRadio)
+                        {
+                            <div class="scheduleDetails">
+                                <div class="scheduleTitle">@schedule.BangumiName</div>
+                                <div class="scheduleUrl">
+                                    <span class="schedulePrefix">【HP】</span>
+                                    <a class="scheduleLink" target="_blank" href="@schedule.BangumiUrl">@schedule.BangumiUrl</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            }
 		</div>
 	</div>
 	<div name="discography" class="blocks discography">

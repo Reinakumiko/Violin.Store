@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav class="nav nav-hideIcon" data-show="hide" data-displayAnimate="true">
-        <ul>
+        <ul class="navbar">
             <li class="sitelogo"><a href="."></a></li>
             <li><a class="jumpAnimate" href="#top">TOP</a></li>
             <li><a href="/News">NEWS</a></li>
@@ -21,7 +21,17 @@
             <li><a class="jumpAnimate" href="#discography">DISCOGRAPHY</a></li>
             <li><a class="jumpAnimate" href="#goods">GOODS</a></li>
             <li><a class="jumpAnimate" href="#profile">PROFILE</a></li>
-            <li><a href="/Account">MEMBER CENTER</a></li>
+            <li>
+                <div class="memberMenu">
+                    <a href="/Account">MEMBER</a>
+                    <div class="menuPanel">
+                        <ul class="menuOptions">
+                            <li><a href="/Account/Address">ADDRESSES</a></li>
+                            <li><a href="/Account/Orders">ORDERS</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
         </ul>
     </nav>
 

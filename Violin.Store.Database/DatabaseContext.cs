@@ -1,4 +1,7 @@
-﻿using System;
+﻿#define MySQL
+
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,7 +11,10 @@ using Violin.Store.Classes;
 
 namespace Violin.Store.Database
 {
-	public class DatabaseContext : DbContext
+#if MySQL
+ //   [DbConfigurationType(typeof(MySqlConfiguration))]
+#endif
+    public class DatabaseContext : DbContext
 	{
 		/// <summary>
 		/// 商品表
@@ -45,10 +51,14 @@ namespace Violin.Store.Database
 		/// </summary>
 		public DbSet<IncludedTracks> IncludedTracks { get; set; }
 
-
-		public DatabaseContext()
-			: base("name=LocalConnectionString")
-		{
+        public DatabaseContext()
+#if MySQL
+            :base("name=MySQLConnectionString")
+#else
+            : base("name=LocalConnectionString")
+#endif
+        {
+            
 		}
 	}
 }

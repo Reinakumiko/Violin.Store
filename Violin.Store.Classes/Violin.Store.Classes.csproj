@@ -48,6 +48,7 @@
     <Compile Include="Goods.cs" />
     <Compile Include="IncludedTracks.cs" />
     <Compile Include="News.cs" />
+    <Compile Include="Orders.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceveAddress.cs" />

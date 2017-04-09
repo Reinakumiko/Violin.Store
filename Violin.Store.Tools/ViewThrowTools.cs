@@ -21,7 +21,7 @@ namespace Violin.Store.Tools
 
         public static ActionResult RequestResult(this Controller controller, ViewThrow viewThrow)
         {
-            var jsonResult = JsonConvert.SerializeObject(new { code = (int)viewThrow.StatusCode, msg = viewThrow.Message });
+            var jsonResult = JsonConvert.SerializeObject(new { code = (int)viewThrow.StatusCode, result = viewThrow.Result, msg = viewThrow.Message });
             controller.Response.Write(jsonResult);
 
             return new HttpStatusCodeResult(HttpStatusCode.OK, viewThrow.Message);

@@ -22,16 +22,19 @@ namespace Violin.Store.Classes
         /// <summary>
         /// 收货人
         /// </summary>
+        [Display(Name = "收货人")]
         public string Consignee { get; set; }
 
         /// <summary>
         /// 收货地址
         /// </summary>
+        [Display(Name = "收货地址")]
         public string Address { get; set; }
 
         /// <summary>
         /// 收货人电话
         /// </summary>
+        [Display(Name = "收货人电话")]
         public string PhoneNumber { get; set; }
     }
 }
