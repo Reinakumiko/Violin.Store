@@ -1,0 +1,15 @@
+﻿<script>
+    $(document).ready(function () {
+        var header = $(".nav");
+        header.attr("data-displayAnimate", "false");
+        header.css("top", "0");
+        header.stop()
+              .hide()
+              .removeClass("nav-hideIcon")
+              .animate({
+                  height: 'show'
+              }, {
+                  speed: 300
+              });
+    });
+</script>

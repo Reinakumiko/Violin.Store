@@ -1,0 +1,62 @@
+﻿@model Violin.Store.Classes.Goods
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div>
+	<h2>移除商品</h2>
+    <h4>你是否确定要移除当前商品</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.ImageUrl)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.ImageUrl)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.State)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.State)
+		</dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+		<div class="form-actions no-color">
+			<input type="submit" value="删除条目" class="btn btn-danger" disabled="disabled" />
+			<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
+		</div>
+	}
+</div>

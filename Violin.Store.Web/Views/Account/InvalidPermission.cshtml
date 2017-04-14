@@ -1,0 +1,32 @@
+﻿
+@{
+	ViewBag.Title = "InvalidPermission";
+	Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+}
+
+<style>
+	.messageBox {
+		margin-top: 50%;
+		transform: translateY(-100%);
+	}
+
+	.loginLink a {
+		margin: 5px;
+		color: #e36;
+	}
+</style>
+
+<div class="container">
+	<div class="messageBox">
+		<div class="messageTitle">访问权限不足</div>
+		<div class="messageBody">
+			<span>您当前的用户权限不足以打开该页面。</span>
+			<br />
+			<span>
+				如果未登录请
+				<span class="loginLink"><a href="/Login">登录</a></span>
+				后再尝试打开该页面。
+			</span>
+		</div>
+	</div>
+</div>

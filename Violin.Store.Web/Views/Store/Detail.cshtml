@@ -1,0 +1,54 @@
+﻿@using Violin.Store.Classes;
+@model Goods
+
+@{
+	Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+	ViewBag.Title = "Detail";
+}
+
+<div class="container">
+	<div class="productInfo">
+		<div class="baseProductInfo">
+			<div class="detailPreview">
+				<img src="~/Content/img/@Model.ImageUrl" />
+			</div>
+			<div class="description">
+				<div class="detailTitle">@Model.Name</div>
+				<div class="detailPrice">￥@Model.Price</div>
+				<div class="detailNotes">
+					@Html.Raw(Model.Note)
+				</div>
+				<div class="buyControl">
+					<div class="buyNumber controlItem">
+						<input id="qty" type="number" min="1" max="99" name="buyNum" value="1" />
+					</div>
+					<div class="buyBuyButton controlItem">
+						<button class="buyButton" type="button" onclick="BuyAction(@Model.ProductId)">Buy</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="buyProductDescription">
+			<div class="descriptionTitle">商品描述</div>
+			<div class="descriptionContent">
+				@Model.Note
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function BuyAction(productId) {
+		var domQty = $("#qty");
+		var qty = domQty.val();
+
+		var max = domQty.attr("max"),
+			min = domQty.attr("min");
+
+		if(qty > max)
+			qty = max;
+		else if(qty < min)
+			qty = min;
+
+		window.location = "../Checkout/" + productId + "?qty=" + qty;
+	}
+</script>

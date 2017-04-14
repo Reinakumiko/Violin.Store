@@ -1,0 +1,58 @@
+﻿@model Violin.Store.Classes.Goods
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+	<h2>商品详情</h2>
+    <h4>修改商品的详细信息</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.ImageUrl)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.ImageUrl)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.State)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.State)
+		</dd>
+
+    </dl>
+</div>
+<p>
+	<a href="../Edit/@Model.ProductId" role="button" class="btn btn-primary">编辑条目</a>
+	<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
+</p>

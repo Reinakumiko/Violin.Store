@@ -1,12 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "Login";
+	Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+	ViewBag.Title = "Login";
 }
 
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <script src="~/Scripts/base64.js"></script>
 
-<div class="container" style="margin-top: 120px;">
+<div class="container">
     <form class="form-horizontal" style="width: 450px; margin: 0px auto;">
 
         <div class="form-group">
@@ -45,39 +46,22 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        var header = $(".nav");
-        header.attr("data-displayAnimate", "false");
-        header.css("top", "0");
-        header.stop()
-              .hide()
-              .removeClass("nav-hideIcon")
-              .animate({
-                  height: 'show'
-              }, {
-                  speed: 300
-              });
-    });
+	function LoginAccount() {
+		var acc = $("#account").val();
+		var pass = $("#password").val();
 
-
-    function LoginAccount()
-    {
-    	var acc = $("#account").val();
-    	var pass = $("#password").val();
-
-    	var obj = {
-    		Account: acc,
+		var obj = {
+			Account: acc,
 			Password: pass
-    	};
+		};
 
-    	$.post("Login", obj, function (data) {
-    	    if (data.result)
-    	    {
-    	        location.href = "/";
-    	        return;
-    	    }
+		$.post("Login", obj, function (data) {
+			if (data.result) {
+				location.href = "/";
+				return;
+			}
 
-    	    alert(data.msg);
-    	}, "json");
-    }
+			alert(data.msg);
+		}, "json");
+	}
 </script>

@@ -62,5 +62,11 @@ namespace Violin.Store.Classes
         /// </summary>
         [Display(Name = "用户收货地址")]
         public List<ReceveAddress> ReceiveAddresses { get; set; }
+
+		/// <summary>
+		/// 该账户下的所有订单
+		/// </summary>
+		[Display(Name = "用户订单")]
+		public List<Orders> Orders { get; set; }
     }
 }

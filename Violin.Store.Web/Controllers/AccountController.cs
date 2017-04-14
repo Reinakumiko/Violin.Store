@@ -97,7 +97,13 @@ namespace Violin.Store.Web.Controllers
             return this.RequestResult(throwResult);
         }
 
-        private void SetUserPassowrd(UserAccount user)
+
+		public ActionResult InvalidPermission()
+		{
+			return View();
+		}
+
+		private void SetUserPassowrd(UserAccount user)
         {
             user.Salt = user.GenerateSalt();
             user.Password = user.EncryptPassword();

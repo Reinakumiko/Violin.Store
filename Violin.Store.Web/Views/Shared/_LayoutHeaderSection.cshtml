@@ -1,0 +1,17 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderBody()
+
+@section _style {
+	<style>
+		.container {
+			margin-top: 120px;
+		}
+	</style>
+}
+
+@section _headerfix {
+	@RenderPage("~/Views/Common/HeaderSection.cshtml")
+}

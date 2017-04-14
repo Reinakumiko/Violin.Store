@@ -3,6 +3,7 @@
 	ViewBag.Title = "Index";
 }
 
+<link href="~/Content/font-awesome.css" rel="stylesheet" />
 <style>
 	a {
 		color: #000;
@@ -75,6 +76,16 @@
 		background-image: url(../../Content/img/arrow_next.png);
 		background-position: 97%;
 	}
+
+	.block-icon {
+		font-size: 130%;
+		margin: 0px 20px;
+		width: 40px;
+	}
+
+	.items:hover {
+		background-color: #f6f6f6;
+	}
 </style>
 
 
@@ -83,32 +94,32 @@
 	<div class="blocks news">
 		<div class="items">
 			<a class="newsLink" href="/News">
-				<div class="newsInfo">新闻管理模块</div>
+				<div class="newsInfo"><i class="fa fa-newspaper-o block-icon" aria-hidden="true"></i>新闻管理模块</div>
 			</a>
 		</div>
 		<div class="items">
 			<a class="newsLink" href="/Schedules">
-				<div class="newsInfo">日程管理模块</div>
+				<div class="newsInfo"><i class="fa fa-calendar block-icon" aria-hidden="true"></i>日程管理模块</div>
 			</a>
 		</div>
 		<div class="items">
 			<a class="newsLink" href="/Discographies">
-				<div class="newsInfo">专辑管理模块</div>
+				<div class="newsInfo"><i class="fa fa-window-maximize block-icon" aria-hidden="true"></i>专辑管理模块</div>
 			</a>
 		</div>
 		<div class="items">
 			<a class="newsLink" href="/IncludedTracks">
-				<div class="newsInfo">收录曲管理模块</div>
+				<div class="newsInfo"><i class="fa fa-music block-icon" aria-hidden="true"></i>收录曲管理模块</div>
 			</a>
 		</div>
 		<div class="items">
-			<a class="newsLink" href="/Store">
-				<div class="newsInfo">商品管理模块</div>
+			<a class="newsLink" href="/Goods">
+				<div class="newsInfo"><i class="fa fa-shopping-bag block-icon" aria-hidden="true"></i>商品管理模块</div>
 			</a>
 		</div>
 		<div class="items">
-			<a class="newsLink" href="/Users">
-				<div class="newsInfo">用户管理模块</div>
+			<a class="newsLink" href="/Accounts">
+				<div class="newsInfo"><i class="fa fa-users block-icon" aria-hidden="true"></i>用户管理模块</div>
 			</a>
 		</div>
 	</div>

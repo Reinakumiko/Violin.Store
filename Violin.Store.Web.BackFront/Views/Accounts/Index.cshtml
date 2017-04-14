@@ -1,0 +1,61 @@
+﻿@using Violin.Store.Classes;
+@using Violin.Store.Classes.AccessFlags;
+@model IEnumerable<UserAccount>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>用户管理目录</h2>
+
+<p>
+	@Html.ActionLink("新建条目", "Create", null, new { role = "button", @class = "btn btn-primary" })
+	<a href="/" role="button" class="btn btn-info" style="margin-left: 10px;">返回主页</a>
+</p>
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Nickname)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Account)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.EmailAddress)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.PhoneNumber)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Access)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Nickname)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Account)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.EmailAddress)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PhoneNumber)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Access)
+			</td>
+			<td>
+				@Html.ActionLink("编辑", "Edit", new { id = item.UserId }) |
+				@Html.ActionLink("详情", "Details", new { id = item.UserId }) |
+				@Html.ActionLink("删除", "Delete", new { id = item.UserId }, new { role = "button", @class = "btn btn-danger btn-xs" })
+			</td>
+		</tr>
+	}
+
+</table>

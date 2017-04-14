@@ -1,0 +1,62 @@
+﻿@model Violin.Store.Classes.UserAccount
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div>
+	<h2>移除账户</h2>
+	<div>你确定要移除这条账户信息吗?</div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nickname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nickname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Account)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Access)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Access)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+		<div class="form-actions no-color">
+			<input type="submit" value="删除条目" class="btn btn-danger" disabled="disabled" />
+			<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
+		</div>
+	}
+</div>

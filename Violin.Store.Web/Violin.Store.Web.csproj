@@ -197,6 +197,13 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\PasswordReset.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\Common\HeaderSection.cshtml" />
+    <Content Include="Views\Shared\_LayoutHeaderSection.cshtml" />
+    <Content Include="Views\Common\Header.cshtml" />
+    <Content Include="Views\Store\Detail.cshtml" />
+    <Content Include="Views\Account\InvalidPermission.cshtml" />
+    <Content Include="Views\Store\Checkout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -207,7 +214,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Store\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Violin.Store.Classes\Violin.Store.Classes.csproj">

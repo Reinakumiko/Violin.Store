@@ -55,6 +55,11 @@ namespace Violin.Store.Classes
         /// </summary>
         Cancled,
 
+		/// <summary>
+		/// 待支付
+		/// </summary>
+		WaitPayment,
+
         /// <summary>
         /// 订单已支付
         /// </summary>

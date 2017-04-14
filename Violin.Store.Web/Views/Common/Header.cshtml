@@ -1,0 +1,75 @@
+﻿<nav class="nav nav-hideIcon" data-show="hide" data-displayAnimate="true">
+	<ul class="navbar">
+		<li class="sitelogo"><a href="/"></a></li>
+		<li><a class="jumpAnimate" href="#top">TOP</a></li>
+		<li><a href="/News">NEWS</a></li>
+		<li><a class="jumpAnimate" href="#schedule">SCHEDULE</a></li>
+		<li><a class="jumpAnimate" href="#discography">DISCOGRAPHY</a></li>
+		<li><a href="/Store">GOODS</a></li>
+		<li><a class="jumpAnimate" href="#profile">PROFILE</a></li>
+		<li>
+			<div class="memberMenu">
+				<a href="/Account">MEMBER</a>
+				<div class="menuPanel">
+					<ul class="menuOptions">
+						<li><a href="/Account/Address">ADDRESSES</a></li>
+						<li><a href="/Account/Orders">ORDERS</a></li>
+					</ul>
+				</div>
+			</div>
+		</li>
+	</ul>
+</nav>
+<script>
+    $(document)
+		.ready(function () {
+		    $(".jumpAnimate").click(function () {
+		        var link = $(this).attr("href").replace("#", "");
+
+		        var positionHeight = 0;
+
+		        if (link != "top")
+		            positionHeight = $("div[name=" + link + "]").offset().top;
+
+		        console.log(positionHeight);
+
+		        $("body").animate({
+		            scrollTop: positionHeight - 60
+		        }, 600);
+
+		        return false;
+		    });
+		})
+		.on("scroll", function () {
+		    var header = $(".nav"), h = $(".container").offset().top;
+
+		    if (header.attr("data-displayAnimate") != "true")
+		        return;
+
+		    var hasClass = header.hasClass("nav-hideIcon");
+
+		    if (document.body.scrollTop >= h) {
+		        if (hasClass)
+		            header.stop()
+                          .hide()
+                          .removeClass("nav-hideIcon")
+                          .animate({
+                              height: 'show'
+                          }, {
+                              speed: 300
+                          });
+		    }
+		    else {
+		        if (!hasClass)
+		            header.stop()
+                          .animate({
+                              height: 'hide'
+                          },
+                          200,
+                          'swing',
+                          function () {
+                              header.addClass("nav-hideIcon").show();
+                          });
+		    }
+		});
+</script>

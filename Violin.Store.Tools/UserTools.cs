@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -18,10 +19,9 @@ namespace Violin.Store.Tools
         public static string EncryptPassword(this UserAccount account)
         {
             MD5 md5 = MD5.Create();
-
             var md5Result = md5.ComputeHash(Encoding.UTF8.GetBytes(account.Password + account.Salt));
-            SHA1 sha1 = SHA1.Create();
 
+            SHA1 sha1 = SHA1.Create();
             var saltBytes = md5Result.ToList();
             saltBytes.AddRange(Encoding.UTF8.GetBytes(account.Salt));
 
