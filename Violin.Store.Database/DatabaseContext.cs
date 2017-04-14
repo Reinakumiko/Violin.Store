@@ -1,4 +1,4 @@
-﻿#define MySQL
+﻿//#define MySQL
 
 using MySql.Data.MySqlClient;
 using System;
@@ -51,7 +51,17 @@ namespace Violin.Store.Database
 		/// </summary>
 		public DbSet<IncludedTracks> IncludedTracks { get; set; }
 
-        public DatabaseContext()
+		/// <summary>
+		/// 订单表
+		/// </summary>
+		public DbSet<Orders> Orders { get; set; }
+
+		/// <summary>
+		/// 购物车表
+		/// </summary>
+		public DbSet<ShoppingCart> Cart { get; set; }
+
+		public DatabaseContext()
 #if MySQL
             :base("name=MySQLConnectionString")
 #else

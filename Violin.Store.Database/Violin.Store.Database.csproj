@@ -72,14 +72,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
-    <Compile Include="Mapping\Mapping_Goods.cs" />
-    <Compile Include="Migrations\201704090546331_InitCreate_MySQL.cs" />
-    <Compile Include="Migrations\201704090546331_InitCreate_MySQL.Designer.cs">
-      <DependentUpon>201704090546331_InitCreate_MySQL.cs</DependentUpon>
+    <Compile Include="Migrations\201702150253097_Init.cs" />
+    <Compile Include="Migrations\201702150253097_Init.Designer.cs">
+      <DependentUpon>201702150253097_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704090805173_AddOrderTable.cs" />
-    <Compile Include="Migrations\201704090805173_AddOrderTable.Designer.cs">
-      <DependentUpon>201704090805173_AddOrderTable.cs</DependentUpon>
+    <Compile Include="Migrations\201702270648173_ModifyScheduleClass.cs" />
+    <Compile Include="Migrations\201702270648173_ModifyScheduleClass.Designer.cs">
+      <DependentUpon>201702270648173_ModifyScheduleClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270823121_ModifyTables.cs" />
+    <Compile Include="Migrations\201702270823121_ModifyTables.Designer.cs">
+      <DependentUpon>201702270823121_ModifyTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270835194_AddPriceTable.cs" />
+    <Compile Include="Migrations\201702270835194_AddPriceTable.Designer.cs">
+      <DependentUpon>201702270835194_AddPriceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270904178_RemovePrice.cs" />
+    <Compile Include="Migrations\201702270904178_RemovePrice.Designer.cs">
+      <DependentUpon>201702270904178_RemovePrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270943477_ModifyPrice.cs" />
+    <Compile Include="Migrations\201702270943477_ModifyPrice.Designer.cs">
+      <DependentUpon>201702270943477_ModifyPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270947372_ModifyDiscography.cs" />
+    <Compile Include="Migrations\201702270947372_ModifyDiscography.Designer.cs">
+      <DependentUpon>201702270947372_ModifyDiscography.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270949312_RemoveProfile.cs" />
+    <Compile Include="Migrations\201702270949312_RemoveProfile.Designer.cs">
+      <DependentUpon>201702270949312_RemoveProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704080721316_AddHserAccess.cs" />
+    <Compile Include="Migrations\201704080721316_AddHserAccess.Designer.cs">
+      <DependentUpon>201704080721316_AddHserAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704100245310_AddOrderTable.cs" />
+    <Compile Include="Migrations\201704100245310_AddOrderTable.Designer.cs">
+      <DependentUpon>201704100245310_AddOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704120405439_ModityGoodsTable.cs" />
+    <Compile Include="Migrations\201704120405439_ModityGoodsTable.Designer.cs">
+      <DependentUpon>201704120405439_ModityGoodsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704140239300_AddShoppingCartTable.cs" />
+    <Compile Include="Migrations\201704140239300_AddShoppingCartTable.Designer.cs">
+      <DependentUpon>201704140239300_AddShoppingCartTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,12 +140,45 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704090546331_InitCreate_MySQL.resx">
-      <DependentUpon>201704090546331_InitCreate_MySQL.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702150253097_Init.resx">
+      <DependentUpon>201702150253097_Init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704090805173_AddOrderTable.resx">
-      <DependentUpon>201704090805173_AddOrderTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702270648173_ModifyScheduleClass.resx">
+      <DependentUpon>201702270648173_ModifyScheduleClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270823121_ModifyTables.resx">
+      <DependentUpon>201702270823121_ModifyTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270835194_AddPriceTable.resx">
+      <DependentUpon>201702270835194_AddPriceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270904178_RemovePrice.resx">
+      <DependentUpon>201702270904178_RemovePrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270943477_ModifyPrice.resx">
+      <DependentUpon>201702270943477_ModifyPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270947372_ModifyDiscography.resx">
+      <DependentUpon>201702270947372_ModifyDiscography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270949312_RemoveProfile.resx">
+      <DependentUpon>201702270949312_RemoveProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704080721316_AddHserAccess.resx">
+      <DependentUpon>201704080721316_AddHserAccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704100245310_AddOrderTable.resx">
+      <DependentUpon>201704100245310_AddOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704120405439_ModityGoodsTable.resx">
+      <DependentUpon>201704120405439_ModityGoodsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704140239300_AddShoppingCartTable.resx">
+      <DependentUpon>201704140239300_AddShoppingCartTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mapping\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
