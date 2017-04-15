@@ -1,7 +1,98 @@
-﻿@model Violin.Store.Classes.ShoppingCart
+﻿@using Violin.Store.Classes;
+	@model IEnumerable<ShoppingCart>
 
-@{
-    ViewBag.Title = "Checkout";
-    Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
-}
+	@{
+		ViewBag.Title = "Checkout";
+		Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+	}
 
+	<link href="~/Content/ickeck/skins/all.css" rel="stylesheet" />
+	<link href="~/Content/ickeck/skins/flat/aero.css" rel="stylesheet" />
+	<script src="~/Content/ickeck/icheck.js"></script>
+
+	<div class="container">
+		<div class="subBlocks">
+			<div class="blockTitle">Checkout</div>
+			<div class="blockBody">
+				<div class="blockItems">
+					<div class="selectBox">
+						<input type="checkbox" class="selectItem" name="selectItem" />
+					</div>
+					<div class="items itemPreview">
+						<img class="previewImage" src="~/Content/img/goods001.jpg" />
+					</div>
+					<div class="itemDetails">
+						<div class="items itemTitle">
+							aaaaaaaaa
+						</div>
+						<div class="items itemDescription">
+							description message in this block
+						</div>
+						<div class="items itemPrices">
+							<span>¥</span>
+							<span class="amount">9999</span>
+						</div>
+					</div>
+					<div class="itemControl">
+						<button type="button" class="buttonRemove">
+							<i class="fa fa-trash-o" aria-hidden="true"></i>
+							<span class="buttonText">移除</span>
+						</button>
+					</div>
+				</div>
+				<div class="blockItems">
+					<div class="selectBox">
+						<input type="checkbox" class="selectItem" name="selectItem" />
+					</div>
+					<div class="items itemPreview">
+						<img class="previewImage" src="~/Content/img/goods001.jpg" />
+					</div>
+					<div class="itemDetails">
+						<div class="items itemTitle">
+							aaaaaaaaa
+						</div>
+						<div class="items itemDescription">
+							description message in this block
+						</div>
+						<div class="items itemPrices">
+							<span>¥</span>
+							<span class="amount">9999</span>
+						</div>
+					</div>
+					<div class="itemControl">
+						<button type="button" class="buttonRemove">
+							<i class="fa fa-trash-o" aria-hidden="true"></i>
+							<span class="buttonText">移除</span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="blockFooter">
+				<button type="button" class="buttonRemove buttonPayment">
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					<span class="buttonText">Payment</span>
+				</button>
+				<div class="paymentPreview">
+					<table>
+						<tr>
+							<td class="previewHeader">总计花费:</td>
+							<td class="previewAmount">¥18000</td>
+						</tr>
+						<tr>
+							<td class="previewHeader">扣除后剩余:</td>
+							<td class="previewAmount">¥66666</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			$('input').iCheck({
+				checkboxClass: 'icheckbox_flat',
+				radioClass: 'iradio_flat'
+			});
+		});
+	</script>

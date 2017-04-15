@@ -24,6 +24,11 @@ img {
 	vertical-align: bottom;
 }
 
+input,
+button {
+	outline: none;
+}
+
 .sitelogo {
 	width: 14.7%;
 }
@@ -469,7 +474,6 @@ img {
 .productInfo .buyNumber input {
 	font-size: 110%;
 	width: 50px;
-	outline: none;
 	vertical-align: middle;
 	padding: 5px;
 }
@@ -478,7 +482,6 @@ img {
 	color: #fff;
 	border: none;
 	background: none;
-	outline: none;
 	background-color: #c40000;
 	border: 1px solid #c40000;
 	height: 35px;
@@ -523,6 +526,157 @@ img {
 	margin: 10% 0px;
 	text-align: center;
 	vertical-align: middle;
+}
+
+.subBlocks .blockTitle {
+	font-size: 150%;
+	font-weight: bold;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.subBlocks .blockBody {
+	padding: 5px 20px;
+}
+
+.subBlocks .blockFooter {
+	padding: 10px;
+	margin-top: 10px;
+	border-top: 1px solid #ccc;
+}
+
+.blockBody .blockItems {
+	font-size: 100%;
+	margin: 10px 0px;
+	position: relative;
+	transition: .3s;
+}
+
+.blockBody .blockItems:hover {
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.blockBody .selectBox {
+	position: absolute;
+	left: 0%;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0px 10px;
+	margin-left: 30px;
+}
+
+.blockItems .itemPreview {
+	float: left;
+	margin: 0px 15px;
+	margin-left: 50px;
+	clear: both;
+}
+
+.blockItems .itemPreview img{
+	width: 100px
+}
+
+.blockBody .blockItems {
+	padding: 5px 20px;
+}
+
+.blockBody .itemDetails{
+	padding: 10px;
+}
+
+.blockBody .itemDetails .items{
+	font-size: 85%;
+	padding: 2px;
+}
+
+.blockBody .itemPrices .amount{
+	font-size: 110%;
+	color:coral;
+}
+
+.blockBody .itemDetails .itemTitle {
+	font-size: 100%;
+}
+
+.blockBody .itemControl{
+	position: absolute;
+	top: 50%;
+	right: 0%;
+	padding: 5px 10px;
+	margin-right: 40px;
+	transform: translateY(-50%);
+}
+
+.itemControl .buttonRemove {
+	color: #fff;
+	padding: 3px 10px;
+	border-radius: 3px;
+	background-color: #d9534f;
+	border: 1px solid #b12c28;
+	transition: .3s;
+
+	cursor: pointer;
+}
+
+.buttonRemove .buttonText {
+	font-size: 90%;
+	margin-left: 5px;
+}
+
+.buttonPayment {
+	cursor: pointer;
+	font-size: 110%;
+	
+	float: right;
+	margin: 5px;
+	margin-right: 30px;
+	padding: 10px 20px;
+
+	color: #000;
+	background-color: #fff;
+
+	border-radius: 3px;
+	border: 1px solid #000;
+
+	opacity: 0.7;
+
+	transition: .2s;
+}
+
+
+.buttonPayment:hover {
+	color: #fff;
+	background-color: #000;
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+.itemControl .buttonRemove:hover {
+	background-color: #c9302c;
+}
+
+.itemDetails .items {
+	overflow: hidden;
+}
+
+.blockFooter .paymentPreview {
+	margin-left: 20px;
+	display: inline-block;
+	font-size: 90%;
+}
+
+.paymentPreview .previewHeader {
+	text-align: right;
+}
+
+.paymentPreview .previewAmount {
+	color: coral;
+}
+
+.blockFooter::after {
+	content: '';
+	display: block;
+	clear: both;
 }
 
 .type-media {

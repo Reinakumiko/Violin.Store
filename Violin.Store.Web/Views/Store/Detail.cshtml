@@ -14,7 +14,9 @@
 			</div>
 			<div class="description">
 				<div class="detailTitle">@Model.Name</div>
-				<div class="detailPrice">￥@Model.Price</div>
+				<div class="detailPrice">
+					<span>¥</span>@Model.Price
+				</div>
 				<div class="detailNotes">
 					@Html.Raw(Model.Note)
 				</div>
