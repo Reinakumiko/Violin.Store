@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
 using Violin.Store.Classes;
 
 namespace Violin.Store.Tools.Filters
 {
 	/// <summary>
-	/// 该特性用于限制操作必须处于登录时才可执行
+	/// 该特性用于限制操作必须处于登录时才可执行，以便于限制用户登录。
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Method)]
 	public class LoginAttribute : ActionFilterAttribute
