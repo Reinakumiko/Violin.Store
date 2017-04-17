@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Violin.Store.Classes;
 using Violin.Store.Database;
+using Violin.Store.Tools.Filters;
 
 namespace Violin.Store.Web.Controllers
 {
@@ -36,7 +37,8 @@ namespace Violin.Store.Web.Controllers
 			return View(productInfo);
 		}
 
-		private ActionResult Checkout()
+		[Login]
+		public ActionResult Checkout()
 		{
 			var user = Session["user"] as UserAccount;
 			var shoppingCart = database.Cart.Where(r => r.Account.UserId == user.UserId).OrderByDescending(r => r.CartId);
@@ -44,23 +46,19 @@ namespace Violin.Store.Web.Controllers
 			return View(shoppingCart);
 		}
 
-		public ActionResult Checkout(int? id, int? qty)
+		[HttpPost, Login]
+		public ActionResult Checkout(int id, int qty)
 		{
-			if (id != null && qty != null)
+			database.Cart.Add(new ShoppingCart()
 			{
-				database.Cart.Add(new ShoppingCart()
-				{
-					Account = Session["user"] as UserAccount,
-					Goods = database.Goods.Find(id),
-					Quantity = qty.Value
-				});
-			}
-			else if ((id ?? qty) != null)
-			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "无效的请求。");
-			}
+				Account = Session["user"] as UserAccount,
+				Goods = database.Goods.Find(id),
+				Quantity = qty
+			});
 
-			return Checkout();
+			database.SaveChanges();
+
+			return RedirectToAction("Checkout");
 		}
 	}
 }

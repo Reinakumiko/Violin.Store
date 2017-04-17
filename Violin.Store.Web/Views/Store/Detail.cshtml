@@ -6,6 +6,12 @@
 	ViewBag.Title = "Detail";
 }
 
+<style>
+	.buyButton:hover {
+		cursor: pointer;
+	}
+</style>
+
 <div class="container">
 	<div class="productInfo">
 		<div class="baseProductInfo">
@@ -28,6 +34,10 @@
 						<button class="buyButton" type="button" onclick="BuyAction(@Model.ProductId)">Buy</button>
 					</div>
 				</div>
+				<form id="jumpAction" action="../Checkout" method="post">
+					<input id="_postId" type="hidden" name="id" value="" />
+					<input id="_postQty" type="hidden" name="qty" value="" />
+				</form>
 			</div>
 		</div>
 		<div class="buyProductDescription">
@@ -51,6 +61,9 @@
 		else if(qty < min)
 			qty = min;
 
-		window.location = "../Checkout/" + productId + "?qty=" + qty;
+		var form = $("#jumpAction");
+		form.find("#_postId").val(productId);
+		form.find("#_postQty").val(qty);
+		form.submit();
 	}
 </script>
