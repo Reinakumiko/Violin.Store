@@ -1,0 +1,68 @@
+﻿@model Violin.Store.Classes.ReceveAddress
+
+@{
+	ViewBag.Title = "EditAddress";
+	Layout = "~/Views/Shared/_LayoutBootStrapFixedHeader.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+
+
+<div class="container">
+	<div class="subBlocks">
+
+		<div class="blockTitle">修改地址</div>
+		<div class="blockBody">
+			@using (Html.BeginForm())
+			{
+				@Html.AntiForgeryToken()
+
+				<div class="form-horizontal formStyle">
+					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.RecevingId)
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.Consignee, htmlAttributes: new { @class = "control-label col-md-3" })
+						<div class="col-md-6">
+							@Html.EditorFor(model => model.Consignee, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.Consignee, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-3" })
+						<div class="col-md-6">
+							@Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-3" })
+						<div class="col-md-6">
+							@Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.PostCode, htmlAttributes: new { @class = "control-label col-md-3" })
+						<div class="col-md-6">
+							@Html.EditorFor(model => model.PostCode, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.PostCode, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div style="margin-left: 27%;">
+							<input type="submit" value="保存修改" class="btn btn-primary" />
+							<a href="../Address" role="button" class="btn btn-default">返回列表</a>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+
+</div>

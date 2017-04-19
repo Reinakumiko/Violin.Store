@@ -3,19 +3,21 @@
 @model IEnumerable<ReceveAddress>
 
 @{
-    ViewBag.Title = "Address";
-    Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+	ViewBag.Title = "Address";
+	Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
 }
 
 <div class="container">
 	<div class="subBlocks addressBlock">
 		<div class="blockTitle">
 			<span>收货地址</span>
-			<span class="newAddress">+ New</span>
+			<span class="newAddress">
+				<button class="newButton" onclick="Create()">添加地址</button>
+			</span>
 		</div>
 		<div class="blockBody">
 			@{
-				if(Model.Count() == 0)
+				if (Model.Count() == 0)
 				{
 					<div style="text-align: center;">暂无可用的收货地址。</div>
 				}
@@ -24,21 +26,108 @@
 				{
 					<div class="blockItems">
 						<div class="address">
-							<div class="addressItem addressTitle">爱泊车</div>
-							<div class="addressItem addressPhone">12344556678</div>
+							<div class="addressItem addressTitle">@item.Consignee</div>
+							<div class="addressItem addressPhone">@item.PhoneNumber</div>
 						</div>
 						<div class="address">
-							<div class="addressItem postcode">(558000)</div>
-							<div class="addressItem addressDetail">地球国 世界省 万能市 蔬菜村 八角路 大山牙沟子家</div>
+							<div class="addressItem postcode">(@item.PostCode)</div>
+							<div class="addressItem addressDetail">@item.Address</div>
 						</div>
 						<div class="footerContainer">
-							<button class="addressButton">设置默认</button>
-							<button class="addressButton">编辑</button>
-							<button class="addressButton">删除</button>
+							@{
+								var disableString = string.Empty;
+								var defaultString = "设置默认";
+
+								if (item.Default)
+								{
+									disableString = "disabled='disabled'";
+									defaultString = "默认地址";
+								}
+
+								<button class="addressButton" onclick="SetDefault(this, @item.RecevingId)">
+									<i class="fa fa-check-square-o" aria-hidden="true"></i>
+									<span class="buttonText">@defaultString</span>
+								</button>
+							}
+							<button class="addressButton" onclick="Edit(@item.RecevingId)">
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+								<span class="buttonText">编辑</span>
+							</button>
+							<button class="addressButton" onclick="Delete(this, @item.RecevingId)">
+								<i class="fa fa-trash-o" aria-hidden="true"></i>
+								<span class="buttonText">删除</span>
+							</button>
 						</div>
 					</div>
-				}
+								}
+
+								<!--
+								<div class="blockItems">
+									<div class="address">
+										<div class="addressItem addressTitle">爱泊车</div>
+										<div class="addressItem addressPhone">12344556678</div>
+									</div>
+									<div class="address">
+										<div class="addressItem postcode">(558000)</div>
+										<div class="addressItem addressDetail">地球国 世界省 万能市 蔬菜村 八角路 大山牙沟子家</div>
+									</div>
+									<div class="footerContainer">
+										<button class="addressButton">
+											<i class="fa fa-check-square-o" aria-hidden="true"></i>
+											<span class="buttonText">设置默认</span>
+										</button>
+										<button class="addressButton">
+											<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+											<span class="buttonText">编辑</span>
+										</button>
+										<button class="addressButton">
+											<i class="fa fa-trash-o" aria-hidden="true"></i>
+											<span class="buttonText">删除</span>
+										</button>
+									</div>
+								</div>
+								-->
 			}
 		</div>
 	</div>
 </div>
+
+<script>
+	function SetDefault(dom, id) {
+		CallPost("SetDefaultAddress", { id: id }, function (data) {
+			if (data.result) {
+				var $this = $(dom);
+
+				$this.find(".buttonText").text("已默认");
+				$this.attr("disabled", true);
+			}
+		});
+	}
+
+	function Create() {
+		CallJump("/Account/NewAddress");
+	}
+
+	function Edit(id) {
+		CallJump("/Account/EditAddress/" + id);
+	}
+
+	function Delete(dom, id) {
+		CallPost("DeleteAddress", { id: id }, function (data) {
+			if (data.result)
+				$(dom).parent().parent().remove();
+		});
+	}
+
+	function CallJump(jumpLink) {
+		window.location = jumpLink;
+	}
+
+	function CallPost(postLink, data, callback) {
+		$.post(postLink, data, function (backData) {
+			callback(backData);
+
+			alert(backData.msg);
+		}, "json");
+	}
+</script>

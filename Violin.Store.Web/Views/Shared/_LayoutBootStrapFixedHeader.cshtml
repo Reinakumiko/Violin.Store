@@ -1,0 +1,37 @@
+﻿
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderBody()
+
+@section _style {
+	<style>
+		.container {
+			margin-top: 120px;
+		}
+
+		nav,
+		.nav ul {
+			border: none;
+			min-height: 0px;
+			font-family: "roboto", 'SourceHanSans';
+			font-weight: bold;
+		}
+
+		.nav > ul {
+			height: 40px;
+		}
+
+		.formStyle {
+			width: 650px;
+			margin-top: 30px;
+			margin-left: 50%;
+			transform: translateX(-52%);
+		}
+	</style>
+}
+
+@section _headerfix {
+	@RenderPage("~/Views/Common/HeaderSection.cshtml")
+}

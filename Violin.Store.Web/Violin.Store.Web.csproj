@@ -320,6 +320,9 @@
     <Content Include="Views\Account\InvalidPermission.cshtml" />
     <Content Include="Views\Store\Checkout.cshtml" />
     <Content Include="Views\Account\Address.cshtml" />
+    <Content Include="Views\Account\NewAddress.cshtml" />
+    <Content Include="Views\Account\EditAddress.cshtml" />
+    <Content Include="Views\Shared\_LayoutBootStrapFixedHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

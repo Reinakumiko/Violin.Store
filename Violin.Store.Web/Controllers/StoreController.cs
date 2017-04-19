@@ -120,6 +120,7 @@ namespace Violin.Store.Web.Controllers
 			var dbUser = database.Account.Find(user.UserId);
 			var cartInfos = database.Cart.Where(cart => id.Contains(cart.CartId));
 			var productPrices = cartInfos.Sum(cart => cart.Goods.Price * cart.Quantity);
+			var address = database.ReceveAddresses.Where(addr => addr.AccountId == dbUser.UserId && addr.Default).FirstOrDefault();
 
 			if (user.Cash < productPrices)
 			{
@@ -139,7 +140,7 @@ namespace Violin.Store.Web.Controllers
 						OrderNumber = $"OR15{timeStamp}{hashCode}",
 						Goods = cartInfos.Select(cart => cart.Goods).ToList(),
 						Account = dbUser,
-						Address = new ReceveAddress() { }
+						Address = address
 					});
 
 					//移除已提交的 Checkout 列表

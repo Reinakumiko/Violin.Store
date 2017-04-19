@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -115,7 +117,10 @@ namespace Violin.Store.Web.Controllers
 		[LoginRequired]
 		public ActionResult Address()
 		{
-			return View();
+			var user = Session["user"] as UserAccount;
+			var addresses =_database.ReceveAddresses.Where(d => d.AccountId == user.UserId);
+
+			return View(addresses);
 		}
 
 		[LoginRequired]
@@ -124,28 +129,113 @@ namespace Violin.Store.Web.Controllers
 			return View();
 		}
 
-		[HttpPost, LoginRequired]
-		public ActionResult NewAddress(ReceveAddress address)
+		[HttpPost, LoginRequired, ValidateAntiForgeryToken]
+		public ActionResult NewAddress([Bind(Include = "Consignee, Address, PhoneNumber, PostCode")] ReceveAddress receiveAddress)
 		{
-			return Json("");
+			if (ModelState.IsValid)
+			{
+				var user = Session["user"] as UserAccount;
+
+				var dbUser = _database.Account.Find(user.UserId);
+
+				receiveAddress.Account = dbUser;
+				_database.ReceveAddresses.Add(receiveAddress);
+				_database.SaveChanges();
+				return RedirectToAction("Address");
+			}
+
+			return View(receiveAddress);
 		}
 
 		[LoginRequired]
-		public ActionResult EditAddress(int id)
+		public ActionResult EditAddress(int? id)
 		{
-			return View();
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			ReceveAddress address = _database.ReceveAddresses.Find(id);
+			if (address == null)
+			{
+				return HttpNotFound();
+			}
+			return View(address);
 		}
 
 		[HttpPost, LoginRequired]
 		public ActionResult EditAddress(ReceveAddress address)
 		{
-			return View();
+			if (ModelState.IsValid)
+			{
+				_database.Entry(address).State = EntityState.Modified;
+				_database.SaveChanges();
+				return RedirectToAction("Index");
+			}
+
+			return View(address);
 		}
 
 		[HttpPost, LoginRequired]
-		public ActionResult DeleteAddress(ReceveAddress address)
+		public ActionResult DeleteAddress(int? id)
 		{
-			return Json("");
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+
+			var address = _database.ReceveAddresses.Find(id);
+			_database.ReceveAddresses.Remove(address);
+
+			var result = false;
+			var message = string.Empty;
+
+			try
+			{
+				result = _database.SaveChanges() > 0;
+				message = result
+						? "已成功将收货地址删除。"
+						: "移除收货地址失败，稍后刷新再试。";
+			}
+			catch (DbException ex)
+			{
+				message = ex.Message;
+			}
+
+			return this.RequestResult(new ViewThrow() {
+				Result = result,
+				Message = message
+			});
+		}
+
+		[HttpPost, LoginRequired]
+		public ActionResult SetDefaultAddress(int id)
+		{
+			var address = _database.ReceveAddresses.Find(id);
+			var addressList = _database.ReceveAddresses.Where(d => d.AccountId == address.AccountId && d.Default);
+
+			addressList.ToList().ForEach(d => d.Default = false);
+			address.Default = true;
+
+			var result = false;
+			var message = string.Empty;
+
+			try
+			{
+				result = _database.SaveChanges() > 0;
+
+				message = result
+						? "成功将地址设置为默认地址。"
+						: "设置默认地址时失败，请稍后再尝试。";
+			}
+			catch (DbException ex)
+			{
+				message = ex.Message;
+			}
+			
+			return this.RequestResult(new ViewThrow() {
+				Message = message,
+				Result = result,
+			});
 		}
 
 		private void SetUserPassowrd(UserAccount user)
