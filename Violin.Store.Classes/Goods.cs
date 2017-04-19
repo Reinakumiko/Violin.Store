@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Violin.Store.Classes
 {
@@ -41,6 +42,11 @@ namespace Violin.Store.Classes
 		/// </summary>
 		[Display(Name = "可购买状态")]
 		public ProductState State { get; set; }
+
+		/// <summary>
+		/// 该产品于哪些订单中已包含
+		/// </summary>
+		public List<Orders> IncludeOrders { get; set; }
 	}
 
 	/// <summary>

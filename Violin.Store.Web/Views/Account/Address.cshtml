@@ -1,0 +1,44 @@
+﻿@using Violin.Store.Classes;
+
+@model IEnumerable<ReceveAddress>
+
+@{
+    ViewBag.Title = "Address";
+    Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+}
+
+<div class="container">
+	<div class="subBlocks addressBlock">
+		<div class="blockTitle">
+			<span>收货地址</span>
+			<span class="newAddress">+ New</span>
+		</div>
+		<div class="blockBody">
+			@{
+				if(Model.Count() == 0)
+				{
+					<div style="text-align: center;">暂无可用的收货地址。</div>
+				}
+
+				foreach (var item in Model)
+				{
+					<div class="blockItems">
+						<div class="address">
+							<div class="addressItem addressTitle">爱泊车</div>
+							<div class="addressItem addressPhone">12344556678</div>
+						</div>
+						<div class="address">
+							<div class="addressItem postcode">(558000)</div>
+							<div class="addressItem addressDetail">地球国 世界省 万能市 蔬菜村 八角路 大山牙沟子家</div>
+						</div>
+						<div class="footerContainer">
+							<button class="addressButton">设置默认</button>
+							<button class="addressButton">编辑</button>
+							<button class="addressButton">删除</button>
+						</div>
+					</div>
+				}
+			}
+		</div>
+	</div>
+</div>

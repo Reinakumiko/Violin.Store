@@ -2,6 +2,7 @@ using MySql.Data.Entity;
 using System.Data.Entity.Migrations;
 using Violin.Store.Classes;
 using Violin.Store.Tools;
+using System;
 
 namespace Violin.Store.Database.Migrations
 {

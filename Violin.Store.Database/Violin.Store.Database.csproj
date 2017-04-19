@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
+    <Compile Include="Mapping\Mapping_Orders.cs" />
     <Compile Include="Migrations\201702150253097_Init.cs" />
     <Compile Include="Migrations\201702150253097_Init.Designer.cs">
       <DependentUpon>201702150253097_Init.cs</DependentUpon>
@@ -119,6 +120,18 @@
     <Compile Include="Migrations\201704140239300_AddShoppingCartTable.cs" />
     <Compile Include="Migrations\201704140239300_AddShoppingCartTable.Designer.cs">
       <DependentUpon>201704140239300_AddShoppingCartTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704180224358_AddAccountCash.cs" />
+    <Compile Include="Migrations\201704180224358_AddAccountCash.Designer.cs">
+      <DependentUpon>201704180224358_AddAccountCash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704180808564_AddGoodOrderMapping.cs" />
+    <Compile Include="Migrations\201704180808564_AddGoodOrderMapping.Designer.cs">
+      <DependentUpon>201704180808564_AddGoodOrderMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704190217269_ModifyReceiveAddress.cs" />
+    <Compile Include="Migrations\201704190217269_ModifyReceiveAddress.Designer.cs">
+      <DependentUpon>201704190217269_ModifyReceiveAddress.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,10 +189,17 @@
     <EmbeddedResource Include="Migrations\201704140239300_AddShoppingCartTable.resx">
       <DependentUpon>201704140239300_AddShoppingCartTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704180224358_AddAccountCash.resx">
+      <DependentUpon>201704180224358_AddAccountCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704180808564_AddGoodOrderMapping.resx">
+      <DependentUpon>201704180808564_AddGoodOrderMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704190217269_ModifyReceiveAddress.resx">
+      <DependentUpon>201704190217269_ModifyReceiveAddress.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

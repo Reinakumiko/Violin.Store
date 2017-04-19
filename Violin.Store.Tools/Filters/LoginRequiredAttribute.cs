@@ -8,7 +8,7 @@ namespace Violin.Store.Tools.Filters
 	/// 该特性用于限制操作必须处于登录时才可执行，以便于限制用户登录。
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Method)]
-	public class LoginAttribute : ActionFilterAttribute
+	public class LoginRequiredAttribute : ActionFilterAttribute
 	{
 		/// <summary>
 		/// 在操作执行前验证用户是否已登录
@@ -19,7 +19,10 @@ namespace Violin.Store.Tools.Filters
 			var user = filterContext.HttpContext.Session["user"];
 
 			if (user == null || !(user is UserAccount))
+			{
 				filterContext.HttpContext.Response.Redirect("/Account/InvalidPermission");
+				return;
+			}
 
 			base.OnActionExecuting(filterContext);
 		}

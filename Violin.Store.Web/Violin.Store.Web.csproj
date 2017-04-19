@@ -319,6 +319,7 @@
     <Content Include="Views\Store\Detail.cshtml" />
     <Content Include="Views\Account\InvalidPermission.cshtml" />
     <Content Include="Views\Store\Checkout.cshtml" />
+    <Content Include="Views\Account\Address.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

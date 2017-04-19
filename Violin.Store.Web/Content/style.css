@@ -117,8 +117,7 @@ button {
 	border: none;
 }
 
-.memberMenu:hover .menuPanel {
-	height: 89px;
+.memberMenu:hover .menuPanel {    height: 125px;
 }
 
 .memberMenu .menuOptions {
@@ -512,7 +511,7 @@ button {
 	min-height: 200px;
 	border: 1px solid #999;
 	border-radius: 3px;
-	box-shadow: 0px 0px 5px 0px #aaa;
+    box-shadow: 0px 0px 10px 0px #ccc;
 }
 
 .messageBox .messageTitle{

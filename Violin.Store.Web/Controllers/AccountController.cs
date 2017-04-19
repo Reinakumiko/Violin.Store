@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Violin.Store.Classes;
 using Violin.Store.Database;
 using Violin.Store.Tools;
+using Violin.Store.Tools.Filters;
 
 namespace Violin.Store.Web.Controllers
 {
@@ -55,6 +56,9 @@ namespace Violin.Store.Web.Controllers
 
         public ActionResult Login()
         {
+			if (Session["user"] != null && Session["user"] is UserAccount)
+				return RedirectToAction("Orders", "Store");
+
             return View();
         }
 
@@ -75,6 +79,11 @@ namespace Violin.Store.Web.Controllers
 
             return this.RequestResult(throwResult);
         }
+
+		public void Logout()
+		{
+			Session["user"] = null;
+		}
 
         public ActionResult PasswordReset()
         {
@@ -101,6 +110,42 @@ namespace Violin.Store.Web.Controllers
 		public ActionResult InvalidPermission()
 		{
 			return View();
+		}
+
+		[LoginRequired]
+		public ActionResult Address()
+		{
+			return View();
+		}
+
+		[LoginRequired]
+		public ActionResult NewAddress()
+		{
+			return View();
+		}
+
+		[HttpPost, LoginRequired]
+		public ActionResult NewAddress(ReceveAddress address)
+		{
+			return Json("");
+		}
+
+		[LoginRequired]
+		public ActionResult EditAddress(int id)
+		{
+			return View();
+		}
+
+		[HttpPost, LoginRequired]
+		public ActionResult EditAddress(ReceveAddress address)
+		{
+			return View();
+		}
+
+		[HttpPost, LoginRequired]
+		public ActionResult DeleteAddress(ReceveAddress address)
+		{
+			return Json("");
 		}
 
 		private void SetUserPassowrd(UserAccount user)

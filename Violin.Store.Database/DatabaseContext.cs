@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Violin.Store.Classes;
+using Violin.Store.Database.Mapping;
 
 namespace Violin.Store.Database
 {
@@ -68,7 +69,15 @@ namespace Violin.Store.Database
             : base("name=LocalConnectionString")
 #endif
         {
-            
 		}
+
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		{
+			modelBuilder.Configurations.Add(new Mapping_Orders());
+
+			base.OnModelCreating(modelBuilder);
+		}
+
+		public System.Data.Entity.DbSet<Violin.Store.Classes.ReceveAddress> ReceveAddresses { get; set; }
 	}
 }

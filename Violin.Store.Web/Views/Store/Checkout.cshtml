@@ -1,102 +1,201 @@
 ﻿@using Violin.Store.Classes;
-	@model IEnumerable<ShoppingCart>
+@model IEnumerable<ShoppingCart>
 
-	@{
-		ViewBag.Title = "Checkout";
-		Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
-	}
+@{
+	ViewBag.Title = "Checkout";
+	Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+}
 
-	<link href="~/Content/ickeck/skins/all.css" rel="stylesheet" />
-	<link href="~/Content/ickeck/skins/flat/aero.css" rel="stylesheet" />
-	<script src="~/Content/ickeck/icheck.js"></script>
+<link href="~/Content/ickeck/skins/all.css" rel="stylesheet" />
+<link href="~/Content/ickeck/skins/flat/aero.css" rel="stylesheet" />
+<script src="~/Content/ickeck/icheck.js"></script>
 
-	<div class="container">
-		<div class="subBlocks">
-			<div class="blockTitle">Checkout</div>
-			<div class="blockBody">
+<div class="container">
+	<div class="subBlocks">
+		<div class="blockTitle">Checkout</div>
+		<div class="blockBody">
+			@foreach (var item in Model)
+			{
 				<div class="blockItems">
 					<div class="selectBox">
-						<input type="checkbox" class="selectItem" name="selectItem" />
+						<input type="checkbox" class="selectItem" name="selectItem" data-cart="@item.CartId" data-price="@(item.Goods.Price * item.Quantity)" />
 					</div>
 					<div class="items itemPreview">
-						<img class="previewImage" src="~/Content/img/goods001.jpg" />
+						<img class="previewImage" src="~/Content/img/@item.Goods.ImageUrl" />
 					</div>
 					<div class="itemDetails">
 						<div class="items itemTitle">
-							aaaaaaaaa
+							@item.Goods.Name
 						</div>
 						<div class="items itemDescription">
-							description message in this block
+							@item.Goods.Note
 						</div>
 						<div class="items itemPrices">
 							<span>¥</span>
-							<span class="amount">9999</span>
+							<span class="amount">@item.Goods.Price</span>
 							<small>
 								<span>x</span>
-								<span>1</span>
+								<span>@item.Quantity</span>
 							</small>
 						</div>
 					</div>
 					<div class="itemControl">
-						<button type="button" class="buttonRemove">
+						<button type="button" class="buttonRemove" data-cart="@item.CartId" onclick="RemoveItem(this)">
 							<i class="fa fa-trash-o" aria-hidden="true"></i>
 							<span class="buttonText">移除</span>
 						</button>
 					</div>
 				</div>
-				<div class="blockItems">
-					<div class="selectBox">
-						<input type="checkbox" class="selectItem" name="selectItem" />
+			}
+
+			<!--
+			<div class="blockItems">
+				<div class="selectBox">
+					<input type="checkbox" class="selectItem" name="selectItem" />
+				</div>
+				<div class="items itemPreview">
+					<img class="previewImage" src="~/Content/img/goods001.jpg" />
+				</div>
+				<div class="itemDetails">
+					<div class="items itemTitle">
+						aaaaaaaaa
 					</div>
-					<div class="items itemPreview">
-						<img class="previewImage" src="~/Content/img/goods001.jpg" />
+					<div class="items itemDescription">
+						description message in this block
 					</div>
-					<div class="itemDetails">
-						<div class="items itemTitle">
-							aaaaaaaaa
-						</div>
-						<div class="items itemDescription">
-							description message in this block
-						</div>
-						<div class="items itemPrices">
-							<span>¥</span>
-							<span class="amount">9999</span>
-						</div>
+					<div class="items itemPrices">
+						<span>¥</span>
+						<span class="amount">9999</span>
+						<small>
+							<span>x</span>
+							<span>1</span>
+						</small>
 					</div>
-					<div class="itemControl">
-						<button type="button" class="buttonRemove">
-							<i class="fa fa-trash-o" aria-hidden="true"></i>
-							<span class="buttonText">移除</span>
-						</button>
-					</div>
+				</div>
+				<div class="itemControl">
+					<button type="button" class="buttonRemove">
+						<i class="fa fa-trash-o" aria-hidden="true"></i>
+						<span class="buttonText">移除</span>
+					</button>
 				</div>
 			</div>
-			<div class="blockFooter">
-				<button type="button" class="buttonRemove buttonPayment">
-					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-					<span class="buttonText">Payment</span>
-				</button>
-				<div class="paymentPreview">
-					<table>
-						<tr>
-							<td class="previewHeader">总计花费:</td>
-							<td class="previewAmount">¥18000</td>
-						</tr>
-						<tr>
-							<td class="previewHeader">扣除后剩余:</td>
-							<td class="previewAmount">¥66666</td>
-						</tr>
-					</table>
+			<div class="blockItems">
+				<div class="selectBox">
+					<input type="checkbox" class="selectItem" name="selectItem" />
 				</div>
+				<div class="items itemPreview">
+					<img class="previewImage" src="~/Content/img/goods001.jpg" />
+				</div>
+				<div class="itemDetails">
+					<div class="items itemTitle">
+						aaaaaaaaa
+					</div>
+					<div class="items itemDescription">
+						description message in this block
+					</div>
+					<div class="items itemPrices">
+						<span>¥</span>
+						<span class="amount">9999</span>
+					</div>
+				</div>
+				<div class="itemControl">
+					<button type="button" class="buttonRemove">
+						<i class="fa fa-trash-o" aria-hidden="true"></i>
+						<span class="buttonText">移除</span>
+					</button>
+				</div>
+			</div>
+			-->
+		</div>
+
+		@{
+			var totalPrice = Model.Sum(i => i.Goods.Price * i.Quantity);
+			var user = ViewBag.User as UserAccount;
+		}
+
+		<div class="blockFooter">
+			<button type="button" class="buttonRemove buttonPayment" onclick="Payment()">
+				<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+				<span class="buttonText">Payment</span>
+			</button>
+			<div class="paymentPreview">
+				<table>
+					<tr>
+						<td class="previewHeader">总计花费:</td>
+						<td class="previewAmount">
+							<span>¥</span>
+							<span class="totalCash">@totalPrice.ToString("f2")</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="previewHeader">扣除后剩余:</td>
+						<td class="previewAmount">
+							<span>¥</span>
+							<span class="userCash" data-cash="@user.Cash">@((user.Cash - totalPrice).ToString("f2"))</span>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>
+</div>
 
-	<script>
-		$(document).ready(function () {
-			$('input').iCheck({
-				checkboxClass: 'icheckbox_flat',
-				radioClass: 'iradio_flat'
-			});
+<script>
+	$(document).ready(function () {
+		$('input').iCheck({
+			checkboxClass: 'icheckbox_flat',
+			radioClass: 'iradio_flat'
+		})
+		.on('ifChanged', function (event) {
+			var list = $(".selectItem:checked");
+			var price = 0.0;
+
+			for (var i = 0; i < list.length; i++) {
+				price += parseFloat($(list[i]).attr("data-price"));
+			}
+
+			$(".totalCash").text(price.toFixed(2));
+			var userCash = $(".userCash");
+			userCash.text((userCash.attr("data-cash") - price).toFixed(2));
 		});
-	</script>
+	});
+
+	function RemoveItem(dom) {
+		var target = $(dom);
+		var cartId = target.attr("data-cart");
+
+		$.post("RemoveFormCheckout", { id: cartId }, function (data) {
+			if (!data.result) {
+				alert(data.msg);
+				return;
+			}
+
+			target.parent().parent().remove();
+		}, "json");
+	}
+
+	function Payment() {
+		var checkedItem = $(".selectItem:checked");
+
+		if (checkedItem.length == 0) {
+			alert("请选择需要进行支付的商品。");
+			return;
+		}
+
+		var cartId = [];
+		for (var i = 0; i < checkedItem.length; i++) {
+			var item = checkedItem[i];
+
+			cartId.push($(item).attr("data-cart"));
+		}
+
+		$.post("Payment", { id: cartId }, function (data) {
+			if (!data.result) {
+				alert(data.msg);
+				return;
+			}
+
+			window.location = "/Store/Orders";
+		}, "json");
+	}
+</script>
