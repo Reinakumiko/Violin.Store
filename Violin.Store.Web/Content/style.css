@@ -545,15 +545,25 @@ button {
 	border-top: 1px solid #ccc;
 }
 
-.blockBody .blockItems {
-	font-size: 100%;
-	margin: 10px 0px;
-	position: relative;
-	transition: .3s;
+
+.subBlocks .leftContainer{
+	float: left;
 }
 
-.blockBody .blockItems:hover {
-	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+.subBlocks .rightContainer {
+	float: right;
+}
+
+.subblocks .footerContainer::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.blockBody .addressTitle {
+	font-size: 130%;
+	margin: 5px 0px;
+	padding: 0px;
 }
 
 .blockBody .selectBox {
@@ -565,22 +575,7 @@ button {
 	margin-left: 30px;
 }
 
-.blockItems .itemPreview {
-	float: left;
-	margin: 0px 15px;
-	margin-left: 50px;
-	clear: both;
-}
-
-.blockItems .itemPreview img{
-	width: 100px
-}
-
-.blockBody .blockItems {
-	padding: 5px 20px;
-}
-
-.blockBody .itemDetails{
+.blockBody .itemDetails {
 	padding: 10px;
 }
 
@@ -605,6 +600,33 @@ button {
 	padding: 5px 10px;
 	margin-right: 40px;
 	transform: translateY(-50%);
+}
+
+.blockBody .blockItems {
+	font-size: 100%;
+	margin: 10px 0px;
+	position: relative;
+	transition: .3s;
+	padding: 5px 20px;
+}
+
+.blockBody .blockItems:hover {
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.blockItems .itemPreview {
+	float: left;
+	margin: 0px 15px;
+	margin-left: 50px;
+	clear: both;
+}
+
+.blockItems .itemPreview img{
+	width: 100px
+}
+
+.blockItems .address .addressItem {
+	display: inline-block;
 }
 
 .itemControl .buttonRemove {
@@ -676,6 +698,48 @@ button {
 	content: '';
 	display: block;
 	clear: both;
+}
+
+.addressBlock .blockItems {
+	position: relative;
+}
+
+.addressBlock .newAddress {
+	margin: 5px;
+	float: right;
+	
+	
+	font-size: 80%;
+	font-weight: 100;
+}
+
+.addressBlock .footerContainer {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.addressBlock .addressButton {
+	background: none;
+	border: none;
+	cursor: pointer;
+	
+	margin: 0px;
+	margin-top: 5px;
+	padding: 5px 10px;
+	transition: .3s;
+	
+	color: #fff;
+	background-color: #d9534f;
+	border: 1px solid #b12c28;
+	
+	border-radius: 2px;
+	overflow: hidden;
+	display: table-cell;
+}
+
+.addressBlock .addressButton:hover {
+	background-color: #c9302c;
 }
 
 .type-media {
