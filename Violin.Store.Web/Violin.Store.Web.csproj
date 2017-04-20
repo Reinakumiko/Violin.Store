@@ -323,6 +323,7 @@
     <Content Include="Views\Account\NewAddress.cshtml" />
     <Content Include="Views\Account\EditAddress.cshtml" />
     <Content Include="Views\Shared\_LayoutBootStrapFixedHeader.cshtml" />
+    <Content Include="Views\Store\Orders.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -35,16 +35,18 @@
 						</div>
 						<div class="footerContainer">
 							@{
+								var disableClassString = string.Empty;
 								var disableString = string.Empty;
 								var defaultString = "设置默认";
 
 								if (item.Default)
 								{
+									disableClassString = "disabledAddress";
 									disableString = "disabled='disabled'";
 									defaultString = "默认地址";
 								}
 
-								<button class="addressButton" onclick="SetDefault(this, @item.RecevingId)">
+								<button class="addressButton @disableClassString" onclick="SetDefault(this, @item.RecevingId)">
 									<i class="fa fa-check-square-o" aria-hidden="true"></i>
 									<span class="buttonText">@defaultString</span>
 								</button>

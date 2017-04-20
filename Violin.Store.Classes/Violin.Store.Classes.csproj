@@ -54,6 +54,7 @@
     <Compile Include="ReceveAddress.cs" />
     <Compile Include="Schedule.cs" />
     <Compile Include="ShoppingCart.cs" />
+    <Compile Include="ShoppingProduct.cs" />
     <Compile Include="UserAccount.cs" />
     <Compile Include="UserAccountOpreator.cs" />
   </ItemGroup>

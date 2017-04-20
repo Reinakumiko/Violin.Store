@@ -7,11 +7,15 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Violin.Store.Classes;
+using Violin.Store.Classes.AccessFlags;
 using Violin.Store.Database;
+using Violin.Store.Tools.Filters;
 
 namespace Violin.Store.Web.BackFront.Controllers
 {
-    public class IncludedTracksController : Controller
+	[LoginRequired]
+	[AccessRequired(UserAccess.Admin)]
+	public class IncludedTracksController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
 

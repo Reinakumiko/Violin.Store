@@ -27,25 +27,18 @@ namespace Violin.Store.Classes
 		public virtual UserAccount Account { get; set; }
 
 		/// <summary>
-		/// 购物车数据对应的商品
+		/// 购物车中商品的信息
 		/// </summary>
-		[Display(Name = "对应商品")]
-		[ForeignKey(nameof(_idGoods))]
-		public virtual Goods Goods { get; set; }
+		[ForeignKey(nameof(_idInfos))]
+		public virtual ShoppingProduct ProductInfo { get; set; }
 
 		/// <summary>
-		/// 商品数量
+		/// 与商品信息关联的外键编号
 		/// </summary>
-		[Display(Name = "商品数量")]
-		public int Quantity { get; set; }
-		
+		public int _idInfos { get; set; }
+
 		/// <summary>
-		/// 与关联商品的外键ID
-		/// </summary>
-		public int _idGoods { get; set; }
-		
-		/// <summary>
-		/// 与关联账户的外键ID
+		/// 与关联账户的外键编号
 		/// </summary>
 		public int _idAccounts { get; set; }
 	}

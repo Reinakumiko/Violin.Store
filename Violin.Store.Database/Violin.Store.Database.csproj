@@ -137,6 +137,10 @@
     <Compile Include="Migrations\201704190707188_AddAddressForeignKey.Designer.cs">
       <DependentUpon>201704190707188_AddAddressForeignKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704200836050_ChangeOrderCartTable.cs" />
+    <Compile Include="Migrations\201704200836050_ChangeOrderCartTable.Designer.cs">
+      <DependentUpon>201704200836050_ChangeOrderCartTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -204,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704190707188_AddAddressForeignKey.resx">
       <DependentUpon>201704190707188_AddAddressForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704200836050_ChangeOrderCartTable.resx">
+      <DependentUpon>201704200836050_ChangeOrderCartTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

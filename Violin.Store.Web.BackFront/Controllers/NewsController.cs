@@ -7,11 +7,15 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Violin.Store.Classes;
+using Violin.Store.Classes.AccessFlags;
 using Violin.Store.Database;
+using Violin.Store.Tools.Filters;
 
 namespace Violin.Store.Web.BackFront.Controllers
 {
-    public class NewsController : Controller
+	[LoginRequired(IsBackstage = true)]
+	[AccessRequired(UserAccess.News)]
+	public class NewsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
 

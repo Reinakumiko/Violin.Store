@@ -22,7 +22,7 @@ namespace Violin.Store.Web.Controllers
 		public ActionResult Index()
 		{
 
-			var productList = database.Goods.OrderByDescending(g => g.ProductId);
+			var productList = database.Goods.Where(g => g.State != ProductState.OffSale).OrderByDescending(g => g.ProductId);
 
 			return View(productList);
 		}
@@ -60,8 +60,11 @@ namespace Violin.Store.Web.Controllers
 			database.Cart.Add(new ShoppingCart()
 			{
 				Account = dbUser,
-				Goods = database.Goods.Find(id),
-				Quantity = qty
+				ProductInfo = new ShoppingProduct()
+				{
+					Goods = database.Goods.Find(id),
+					Quantity = qty
+				}
 			});
 
 			database.SaveChanges();
@@ -72,7 +75,10 @@ namespace Violin.Store.Web.Controllers
 		[LoginRequired]
 		public ActionResult Orders()
 		{
-			return View();
+			var user = Session["user"] as UserAccount;
+			var orders = database.Orders.Where(o => o.Account.UserId == user.UserId);
+
+			return View(orders.ToList());
 		}
 
 		// HttpPost 用于后台提交
@@ -119,7 +125,7 @@ namespace Violin.Store.Web.Controllers
 			var user = Session["user"] as UserAccount;
 			var dbUser = database.Account.Find(user.UserId);
 			var cartInfos = database.Cart.Where(cart => id.Contains(cart.CartId));
-			var productPrices = cartInfos.Sum(cart => cart.Goods.Price * cart.Quantity);
+			var productPrices = cartInfos.Sum(cart => cart.ProductInfo.Goods.Price * cart.ProductInfo.Quantity);
 			var address = database.ReceveAddresses.Where(addr => addr.AccountId == dbUser.UserId && addr.Default).FirstOrDefault();
 
 			if (user.Cash < productPrices)
@@ -138,9 +144,10 @@ namespace Violin.Store.Web.Controllers
 					database.Orders.Add(new Orders()
 					{
 						OrderNumber = $"OR15{timeStamp}{hashCode}",
-						Goods = cartInfos.Select(cart => cart.Goods).ToList(),
+						ProductInfos = cartInfos.Select(cart => cart.ProductInfo).ToList(),
 						Account = dbUser,
-						Address = address
+						Address = address,
+						State = OrderState.WaitPayment
 					});
 
 					//移除已提交的 Checkout 列表

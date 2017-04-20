@@ -1,0 +1,68 @@
+﻿@using Violin.Store.Classes;
+@using Violin.Store.Tools;
+@model IEnumerable<Orders>
+
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+}
+
+
+<div class="container">
+	<div class="subBlocks orderBlock">
+		<div class="blockTitle">所有订单</div>
+		<div class="blockBody">
+			@foreach (var order in Model)
+			{
+				<div class="blockItems orderDetails">
+					<div class="detailItem orderTitle">
+						<div class="orderNumber">@order.OrderNumber</div>
+						<div class="orderState">@order.State</div>
+					</div>
+					<div class="detailItem orderBody">
+						<div class="orderProducts">
+							@{
+								if ((order?.ProductInfos.Count ?? 0) == 0)
+								{
+									<div style="text-align: center;">无法查询订单中的产品列表。</div>
+								}
+
+								foreach (var product in order.ProductInfos)
+								{
+									<div class="productItems">
+										<div class="items itemPreview">
+											<img class="previewImage" src="~/Content/img/@product.Goods.ImageUrl" />
+										</div>
+										<div class="itemDetails">
+											<div class="items itemTitle">
+												@product.Goods.Name
+											</div>
+											<div class="items itemDescription">
+												@product.Goods.Note
+											</div>
+											<div class="items itemPrices">
+												<span>¥</span>
+												<span class="amount">@product.Goods x @product.Quantity</span>
+											</div>
+										</div>
+									</div>
+								}
+							}
+						</div>
+					</div>
+					<div class="detailItem orderFooter">
+						<div class="orderAddress">
+							<div class="address">
+								<div class="addressItem addressTitle">@order.Address.Consignee</div>
+								<div class="addressItem addressPhone">(@order.Address.PhoneNumber)</div>
+							</div>
+							<div class="address">
+								<div class="addressItem addressDetail">@order.Address.Address</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</div>

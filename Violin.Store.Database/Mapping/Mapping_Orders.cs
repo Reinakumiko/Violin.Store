@@ -13,15 +13,16 @@ namespace Violin.Store.Database.Mapping
 		public Mapping_Orders()
 		{
 			this.ToTable(nameof(Orders));
-
-			this.HasMany(o => o.Goods)
-				.WithMany(g => g.IncludeOrders)
+			/*
+			this.HasMany(o => o.ProductInfos)
+				.WithMany(g => g.ProductId)
 				.Map(m =>
 				{
 					m.ToTable("OrderProduct");
 					m.MapLeftKey(nameof(Orders.OrderID));
 					m.MapRightKey(nameof(Goods.ProductId));
 				});
+			*/
 		}
 	}
 }

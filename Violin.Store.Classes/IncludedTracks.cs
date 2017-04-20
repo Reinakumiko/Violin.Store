@@ -44,7 +44,7 @@ namespace Violin.Store.Classes
 		/// </summary>
 		[ForeignKey("DiscographyId")]
 		[Display(Name = "所属专辑")]
-		public Discography Discography { get; set; }
+		public virtual Discography Discography { get; set; }
 
 		/// <summary>
 		/// 所属专辑编号

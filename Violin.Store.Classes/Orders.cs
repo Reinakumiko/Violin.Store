@@ -31,7 +31,7 @@ namespace Violin.Store.Classes
 		/// 订单内产品列表
 		/// </summary>
 		[Display(Name = "产品列表")]
-		public virtual List<Goods> Goods { get; set; }
+		public virtual List<ShoppingProduct> ProductInfos { get; set; }
 
 		/// <summary>
 		/// 购买用户
