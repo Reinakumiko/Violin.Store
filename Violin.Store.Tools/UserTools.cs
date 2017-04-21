@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using Violin.Store.Classes;
 
 namespace Violin.Store.Tools
@@ -37,5 +38,15 @@ namespace Violin.Store.Tools
         {
             return account.GetHashCode().ToString("x6");
         }
+
+		/// <summary>
+		/// 用户访问该页面时是否已登录
+		/// </summary>
+		/// <param name="page"></param>
+		/// <returns></returns>
+		public static bool IsUserSigned(this WebViewPage page)
+		{
+			return (page.Session["user"] as UserAccount) != null;
+		}
     }
 }

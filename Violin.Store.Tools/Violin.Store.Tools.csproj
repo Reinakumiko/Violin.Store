@@ -90,7 +90,7 @@
   <ItemGroup>
     <Compile Include="DatabaseTools.cs" />
     <Compile Include="EnumTools.cs" />
-    <Compile Include="Filters\AccessRequired.cs" />
+    <Compile Include="Filters\AccessRequiredAttribute.cs" />
     <Compile Include="Filters\LoginRequiredAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserTools.cs" />

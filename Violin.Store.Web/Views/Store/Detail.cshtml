@@ -3,7 +3,7 @@
 
 @{
 	Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
-	ViewBag.Title = "Detail";
+	ViewBag.Title = "商品详情";
 }
 
 <style>
@@ -13,37 +13,42 @@
 </style>
 
 <div class="container">
-	<div class="productInfo">
-		<div class="baseProductInfo">
-			<div class="detailPreview">
-				<img src="~/Content/img/@Model.ImageUrl" />
-			</div>
-			<div class="description">
-				<div class="detailTitle">@Model.Name</div>
-				<div class="detailPrice">
-					<span>¥</span>@Model.Price
-				</div>
-				<div class="detailNotes">
-					@Html.Raw(Model.Note)
-				</div>
-				<div class="buyControl">
-					<div class="buyNumber controlItem">
-						<input id="qty" type="number" min="1" max="99" name="buyNum" value="1" />
+	<div class="subBlocks">
+		<div class="blockTitle">商品详情</div>
+		<div class="blockBody">
+			<div class="productInfo">
+				<div class="baseProductInfo">
+					<div class="detailPreview">
+						<img src="~/Content/img/@Model.ImageUrl" />
 					</div>
-					<div class="buyBuyButton controlItem">
-						<button class="buyButton" type="button" onclick="BuyAction(@Model.ProductId)">Buy</button>
+					<div class="description">
+						<div class="detailTitle">@Model.Name</div>
+						<div class="detailPrice">
+							<span>¥</span>@Model.Price
+						</div>
+						<div class="detailNotes">
+							@Html.Raw(Model.Note)
+						</div>
+						<div class="buyControl">
+							<div class="buyNumber controlItem">
+								<input id="qty" type="number" min="1" max="99" name="buyNum" value="1" />
+							</div>
+							<div class="buyBuyButton controlItem">
+								<button class="buyButton" type="button" onclick="BuyAction(@Model.ProductId)">Buy</button>
+							</div>
+						</div>
+						<form id="jumpAction" action="../Checkout" method="post">
+							<input id="_postId" type="hidden" name="id" value="" />
+							<input id="_postQty" type="hidden" name="qty" value="" />
+						</form>
 					</div>
 				</div>
-				<form id="jumpAction" action="../Checkout" method="post">
-					<input id="_postId" type="hidden" name="id" value="" />
-					<input id="_postQty" type="hidden" name="qty" value="" />
-				</form>
-			</div>
-		</div>
-		<div class="buyProductDescription">
-			<div class="descriptionTitle">商品描述</div>
-			<div class="descriptionContent">
-				@Model.Note
+				<div class="buyProductDescription">
+					<div class="descriptionTitle">商品描述</div>
+					<div class="descriptionContent">
+						@Model.Note
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

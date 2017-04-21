@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AccessFlags\UserAccess.cs" />
     <Compile Include="Artister.cs" />
+    <Compile Include="Attributes\MemberNameAttribute.cs" />
     <Compile Include="Discography.cs" />
     <Compile Include="Giveways.cs" />
     <Compile Include="Goods.cs" />

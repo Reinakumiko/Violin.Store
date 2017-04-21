@@ -3,7 +3,8 @@
 @model News
 
 @{
-    ViewBag.Title = "NewsDetail";
+	Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+	ViewBag.Title = "新闻详情";
 }
 
 <div class="container">
@@ -27,9 +28,9 @@
 			</div>
 		</div>
 		<div class="footerControls">
-			<a class="footerItem control control-prev" href="#">&lt; Prev</a>
+			<a class="footerItem control control-prev" href="@ViewBag.Prev">&lt; Prev</a>
 			<a class="footerItem control control-list" href="/News">LIST</a>
-			<a class="footerItem control control-next" href="#">Next &gt;</a>
+			<a class="footerItem control control-next" href="@ViewBag.Next">Next &gt;</a>
 		</div>
 	</div>
 </div>

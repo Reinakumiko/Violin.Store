@@ -28,7 +28,9 @@ namespace Violin.Store.Tools.Filters
 			var accessFlags = new List<UserAccess>() { UserAccess.Root };
 			accessFlags.AddRange(Access);
 
-			var hasAccess = accessFlags.Contains(user.Access);
+			var hasAccess = user == null
+						  ? false
+						  : accessFlags.Contains(user.Access);
 
 			if (!hasAccess)
 			{

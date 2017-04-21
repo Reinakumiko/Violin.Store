@@ -3,8 +3,8 @@
 @model IEnumerable<Orders>
 
 @{
-    ViewBag.Title = "Orders";
-    Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+	Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
+	ViewBag.Title = "所有订单";
 }
 
 
@@ -17,7 +17,7 @@
 				<div class="blockItems orderDetails">
 					<div class="detailItem orderTitle">
 						<div class="orderNumber">@order.OrderNumber</div>
-						<div class="orderState">@order.State</div>
+						<div class="orderState">@order.State.GetDisplayName()</div>
 					</div>
 					<div class="detailItem orderBody">
 						<div class="orderProducts">
@@ -42,7 +42,7 @@
 											</div>
 											<div class="items itemPrices">
 												<span>¥</span>
-												<span class="amount">@product.Goods x @product.Quantity</span>
+												<span class="amount">@product.Goods.Price x @product.Quantity</span>
 											</div>
 										</div>
 									</div>

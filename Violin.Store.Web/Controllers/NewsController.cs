@@ -30,11 +30,25 @@ namespace Violin.Store.Web.Controllers
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			News news = db.News.Find(id);
+
+
+			var newsList = db.News.ToList();
+
+			News news = newsList.Find(@new => @new.NewsID == id);
 			if (news == null)
 			{
 				return HttpNotFound();
 			}
+
+			var index = newsList.IndexOf(news);
+
+			ViewBag.Next = index < newsList.Count - 1
+						 ? newsList[(index + 1)].NewsID.ToString()
+						 : "#";
+
+			ViewBag.Prev = index > 0
+						 ? newsList[(index - 1)].NewsID.ToString()
+						 : "#";
 
 			return View("NewsDetail", news);
 		}

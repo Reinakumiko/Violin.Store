@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Violin.Store.Tools.Attributes;
 
 namespace Violin.Store.Classes
 {
@@ -54,32 +55,44 @@ namespace Violin.Store.Classes
 		/// <summary>
 		/// 订单已关闭
 		/// </summary>
+		[MemberName(Name = "已关闭")]
 		Closed,
 
 		/// <summary>
 		/// 订单已取消
 		/// </summary>
+		[MemberName(Name = "已取消")]
 		Cancled,
 
 		/// <summary>
-		/// 待支付
+		/// 订单待支付
 		/// </summary>
+		[MemberName(Name = "待支付")]
 		WaitPayment,
 
 		/// <summary>
 		/// 订单已支付
 		/// </summary>
+		[MemberName(Name = "已支付")]
 		Paid,
+
+		/// <summary>
+		/// 订单待发货
+		/// </summary>
+		[MemberName(Name = "待发货")]
+		WaitShip,
 
 		/// <summary>
 		/// 订单已发货
 		/// </summary>
+		[MemberName(Name = "已发货")]
 		Shipped,
 
 		/// <summary>
 		/// 订单已签收
 		/// 理论上用不到已签收
 		/// </summary>
+		[MemberName(Name = "已签收")]
 		Signed
 	}
 }

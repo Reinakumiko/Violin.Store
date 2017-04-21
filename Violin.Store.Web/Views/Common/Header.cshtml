@@ -1,20 +1,57 @@
-﻿<nav class="nav nav-hideIcon" data-show="hide" data-displayAnimate="true">
+﻿@using Violin.Store.Tools;
+
+@{
+	var isLogin = this.IsUserSigned();
+
+	var controllerName = ViewContext.RouteData.Values["controller"].ToString();
+
+	var homeLink = string.Empty;
+	var homeString = string.Empty;
+
+
+	if (controllerName == "Home")
+	{
+		homeLink = "/#top";
+		homeString = "TOP";
+	}
+	else
+	{
+		homeLink = "/";
+		homeString = "HOME";
+	}
+}
+
+@if (!isLogin)
+{
+	<style>
+		.memberMenu:hover .menuPanel {
+			height: 125px;
+		}
+	</style>
+}
+
+<nav class="nav nav-hideIcon" data-show="hide" data-displayAnimate="true">
 	<ul class="navbar">
 		<li class="sitelogo"><a href="/"></a></li>
-		<li><a class="jumpAnimate" href="#top">TOP</a></li>
+		<li><a class="jumpAnimate" href="@homeLink">@homeString</a></li>
 		<li><a href="/News">NEWS</a></li>
-		<li><a class="jumpAnimate" href="#schedule">SCHEDULE</a></li>
-		<li><a class="jumpAnimate" href="#discography">DISCOGRAPHY</a></li>
+		<li><a class="jumpAnimate" href="/#schedule">SCHEDULE</a></li>
+		<li><a class="jumpAnimate" href="/#discography">DISCOGRAPHY</a></li>
 		<li><a href="/Store">GOODS</a></li>
-		<li><a class="jumpAnimate" href="#profile">PROFILE</a></li>
+		<li><a class="jumpAnimate" href="/#profile">PROFILE</a></li>
 		<li>
 			<div class="memberMenu">
 				<a href="/Account">MEMBER</a>
 				<div class="menuPanel">
 					<ul class="menuOptions">
 						<li><a href="/Account/Address">ADDRESSES</a></li>
+						<li><a href="/Store/Checkout">CHECKOUT</a></li>
 						<li><a href="/Store/Orders">ORDERS</a></li>
-						<li><a href="/Account/Logout">Log out</a></li>
+
+						@if (isLogin)
+						{
+							<li><a href="/Account/Logout">LOGOUT</a></li>
+						}
 					</ul>
 				</div>
 			</div>
@@ -22,55 +59,55 @@
 	</ul>
 </nav>
 <script>
-    $(document)
+	$(document)
 		.ready(function () {
-		    $(".jumpAnimate").click(function () {
-		        var link = $(this).attr("href").replace("#", "");
+			$(".jumpAnimate").click(function () {
+				var link = $(this).attr("href").replace("/#", "");
 
-		        var positionHeight = 0;
+				var positionHeight = 0;
 
-		        if (link != "top")
-		            positionHeight = $("div[name=" + link + "]").offset().top;
+				if (link != "top")
+					positionHeight = $("div[name=" + link + "]").offset().top;
 
-		        console.log(positionHeight);
+				console.log(positionHeight);
 
-		        $("body").animate({
-		            scrollTop: positionHeight - 60
-		        }, 600);
+				$("body").animate({
+					scrollTop: positionHeight - 60
+				}, 600);
 
-		        return false;
-		    });
+				return false;
+			});
 		})
 		.on("scroll", function () {
-		    var header = $(".nav"), h = $(".container").offset().top;
+			var header = $(".nav"), h = $(".container").offset().top;
 
-		    if (header.attr("data-displayAnimate") != "true")
-		        return;
+			if (header.attr("data-displayAnimate") != "true")
+				return;
 
-		    var hasClass = header.hasClass("nav-hideIcon");
+			var hasClass = header.hasClass("nav-hideIcon");
 
-		    if (document.body.scrollTop >= h) {
-		        if (hasClass)
-		            header.stop()
-                          .hide()
-                          .removeClass("nav-hideIcon")
-                          .animate({
-                              height: 'show'
-                          }, {
-                              speed: 300
-                          });
-		    }
-		    else {
-		        if (!hasClass)
-		            header.stop()
-                          .animate({
-                              height: 'hide'
-                          },
-                          200,
-                          'swing',
-                          function () {
-                              header.addClass("nav-hideIcon").show();
-                          });
-		    }
+			if (document.body.scrollTop >= h) {
+				if (hasClass)
+					header.stop()
+						  .hide()
+						  .removeClass("nav-hideIcon")
+						  .animate({
+						  	height: 'show'
+						  }, {
+						  	speed: 300
+						  });
+			}
+			else {
+				if (!hasClass)
+					header.stop()
+						  .animate({
+						  	height: 'hide'
+						  },
+						  200,
+						  'swing',
+						  function () {
+						  	header.addClass("nav-hideIcon").show();
+						  });
+			}
 		});
 </script>

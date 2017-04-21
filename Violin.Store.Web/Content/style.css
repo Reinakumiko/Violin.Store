@@ -117,7 +117,8 @@ button {
 	border: none;
 }
 
-.memberMenu:hover .menuPanel {    height: 125px;
+.memberMenu:hover .menuPanel {
+	height: 161px;
 }
 
 .memberMenu .menuOptions {
@@ -176,7 +177,7 @@ button {
 }
 
 .news .newsDetails {
-	margin: 10px 5px;
+	margin: 15px 5px;
 }
 
 .news .newsTitle {
@@ -209,6 +210,12 @@ button {
 	background: center no-repeat;
 	background-image: url(img/arrow_next.png);
 	background-position: 97%;
+
+	transition: .3s;
+}
+
+.news .newsLink:hover {
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 .news .dateTime .dateItem {
@@ -239,7 +246,7 @@ button {
 }
 
 .newsDetail .itemContainer {
-	margin: 10%;
+	margin: 1%;
 	margin-left: 15%;
 }
 
@@ -504,17 +511,17 @@ button {
 	padding: 20px 40px;
 }
 
-.messageBox{
+.messageBox {
 	margin: 10px auto;
 	padding: 10px;
 	width: 500px;
 	min-height: 200px;
 	border: 1px solid #999;
 	border-radius: 3px;
-    box-shadow: 0px 0px 10px 0px #ccc;
+	box-shadow: 0px 0px 10px 0px #ccc;
 }
 
-.messageBox .messageTitle{
+.messageBox .messageTitle {
 	font-size: 130%;
 	padding-bottom: 5px;
 	margin-bottom: 5px;
@@ -545,7 +552,7 @@ button {
 	border-top: 1px solid #ccc;
 }
 
-.subBlocks .leftContainer{
+.subBlocks .leftContainer {
 	float: left;
 }
 
@@ -578,21 +585,21 @@ button {
 	padding: 10px;
 }
 
-.blockBody .itemDetails .items{
+.blockBody .itemDetails .items {
 	font-size: 85%;
 	padding: 2px;
 }
 
-.blockBody .itemPrices .amount{
+.blockBody .itemPrices .amount {
 	font-size: 110%;
-	color:coral;
+	color: coral;
 }
 
 .blockBody .itemDetails .itemTitle {
 	font-size: 100%;
 }
 
-.blockBody .itemControl{
+.blockBody .itemControl {
 	position: absolute;
 	top: 50%;
 	right: 0%;
@@ -620,8 +627,8 @@ button {
 	clear: both;
 }
 
-.blockItems .itemPreview img{
-	width: 100px
+.blockItems .itemPreview img {
+	width: 100px;
 }
 
 .blockItems .address .addressItem {
@@ -635,7 +642,6 @@ button {
 	background-color: #d9534f;
 	border: 1px solid #b12c28;
 	transition: .3s;
-
 	cursor: pointer;
 }
 
@@ -647,20 +653,15 @@ button {
 .buttonPayment {
 	cursor: pointer;
 	font-size: 110%;
-	
 	float: right;
 	margin: 5px;
 	margin-right: 30px;
 	padding: 10px 20px;
-
 	color: #000;
 	background-color: #fff;
-
 	border-radius: 3px;
 	border: 1px solid #000;
-
 	opacity: 0.7;
-
 	transition: .2s;
 }
 
@@ -707,18 +708,15 @@ button {
 	float: right;
 }
 
-.addressBlock .newAddress .newButton{
+.addressBlock .newAddress .newButton {
 	margin: 5px;
 	margin-top: 10px;
-		
 	font-size: 70%;
 	font-weight: 100;
-
 	background: none;
 	border: none;
 	cursor: pointer;
 	border: 1px solid rgba(0,0,0,0);
-
 	padding: 5px 10px;
 	transition: .15s;
 }
@@ -733,9 +731,7 @@ button {
 	position: absolute;
 	right: 0;
 	top: 0;
-
 	margin: 0px 5px;
-
 	display: none;
 }
 
@@ -747,16 +743,13 @@ button {
 	background: none;
 	border: none;
 	cursor: pointer;
-	
 	margin: 0px;
 	margin-top: 5px;
 	padding: 5px 10px;
 	transition: .3s;
-	
 	color: #fff;
 	background-color: #d9534f;
 	border: 1px solid #b12c28;
-	
 	border-radius: 2px;
 	overflow: hidden;
 	display: table-cell;
@@ -768,7 +761,6 @@ button {
 
 .orderBlock .blockItems {
 	padding: 0px;
-	
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
@@ -778,7 +770,6 @@ button {
 
 .orderBlock .orderAddress::before {
 	clear: both;
-	
 }
 
 .orderBlock .orderDetails .detailItem {
@@ -789,11 +780,10 @@ button {
 .orderBlock .orderTitle,
 .orderBlock .orderFooter {
 	background-color: #f5f5f5;
-	
 	padding: 10px 0px;
 }
 
-.orderBlock .orderTitle{
+.orderBlock .orderTitle {
 	border-bottom: 1px solid #ddd;
 }
 

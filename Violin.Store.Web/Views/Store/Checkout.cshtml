@@ -2,7 +2,7 @@
 @model IEnumerable<ShoppingCart>
 
 @{
-	ViewBag.Title = "Checkout";
+	ViewBag.Title = "收银台";
 	Layout = "~/Views/Shared/_LayoutHeaderSection.cshtml";
 }
 
@@ -16,26 +16,28 @@
 		<div class="blockBody">
 			@foreach (var item in Model)
 			{
+				var productInfo = item.ProductInfo;
+
 				<div class="blockItems">
 					<div class="selectBox">
-						<input type="checkbox" class="selectItem" name="selectItem" data-cart="@item.CartId" data-price="@(item.Goods.Price * item.Quantity)" />
+						<input type="checkbox" class="selectItem" name="selectItem" data-cart="@item.CartId" data-price="@(productInfo.Goods.Price * productInfo.Quantity)" />
 					</div>
 					<div class="items itemPreview">
-						<img class="previewImage" src="~/Content/img/@item.Goods.ImageUrl" />
+						<img class="previewImage" src="~/Content/img/@productInfo.Goods.ImageUrl" />
 					</div>
 					<div class="itemDetails">
 						<div class="items itemTitle">
-							@item.Goods.Name
+							@productInfo.Goods.Name
 						</div>
 						<div class="items itemDescription">
-							@item.Goods.Note
+							@productInfo.Goods.Note
 						</div>
 						<div class="items itemPrices">
 							<span>¥</span>
-							<span class="amount">@item.Goods.Price</span>
+							<span class="amount">@productInfo.Goods.Price</span>
 							<small>
 								<span>x</span>
-								<span>@item.Quantity</span>
+								<span>@productInfo.Quantity</span>
 							</small>
 						</div>
 					</div>
@@ -109,7 +111,7 @@
 		</div>
 
 		@{
-			var totalPrice = Model.Sum(i => i.Goods.Price * i.Quantity);
+			var totalPrice = Model.Sum(i => i.ProductInfo.Goods.Price * i.ProductInfo.Quantity);
 			var user = ViewBag.User as UserAccount;
 		}
 
