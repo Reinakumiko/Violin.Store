@@ -261,11 +261,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\DiscographiesController.cs" />
+    <Compile Include="Controllers\GiveawaysController.cs" />
     <Compile Include="Controllers\GoodsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\IncludedTracksController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\SchedulesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -310,6 +312,16 @@
     <Content Include="Views\Accounts\Index.cshtml" />
     <Content Include="Views\Home\InvalidPermission.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Giveaways\Create.cshtml" />
+    <Content Include="Views\Giveaways\Delete.cshtml" />
+    <Content Include="Views\Giveaways\Details.cshtml" />
+    <Content Include="Views\Giveaways\Edit.cshtml" />
+    <Content Include="Views\Giveaways\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

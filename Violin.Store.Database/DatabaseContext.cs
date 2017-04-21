@@ -79,5 +79,7 @@ namespace Violin.Store.Database
 		}
 
 		public System.Data.Entity.DbSet<Violin.Store.Classes.ReceveAddress> ReceveAddresses { get; set; }
+
+		public System.Data.Entity.DbSet<Violin.Store.Classes.Giveaway> Giveaways { get; set; }
 	}
 }
