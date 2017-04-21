@@ -147,7 +147,7 @@ namespace Violin.Store.Web.Controllers
 						ProductInfos = cartInfos.Select(cart => cart.ProductInfo).ToList(),
 						Account = dbUser,
 						Address = address,
-						State = OrderState.WaitPayment
+						State = OrderState.Paid
 					});
 
 					//移除已提交的 Checkout 列表

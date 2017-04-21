@@ -560,7 +560,7 @@ button {
 	float: right;
 }
 
-.subblocks .footerContainer::after {
+.subBlocks .footerContainer::after {
 	content: '';
 	display: block;
 	clear: both;
