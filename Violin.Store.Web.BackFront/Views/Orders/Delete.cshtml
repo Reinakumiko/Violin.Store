@@ -1,4 +1,7 @@
-﻿@model Violin.Store.Classes.Orders
+﻿@using Violin.Store.Tools;
+@using Violin.Store.Classes;
+
+@model Orders
 
 @{
     ViewBag.Title = "Delete";
@@ -24,7 +27,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.State)
+			@Model.State.GetDisplayName()
         </dd>
 
     </dl>
@@ -33,8 +36,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+			<input type="submit" value="删除条目" class="btn btn-danger" />
+			<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
         </div>
     }
 </div>

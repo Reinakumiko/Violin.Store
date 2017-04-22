@@ -1,13 +1,17 @@
-﻿@model IEnumerable<Violin.Store.Classes.Orders>
+﻿@using Violin.Store.Classes;
+@using Violin.Store.Tools;
+
+@model IEnumerable<Orders>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>订单列表</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    	@Html.ActionLink("添加条目", "", null, new { role = "button", @class = "btn btn-primary", disabled = "disabled" })
+		<a href="/" role="button" class="btn btn-info" style="margin-left: 10px;">返回主页</a>
 </p>
 <table class="table">
     <tr>
@@ -26,12 +30,11 @@
             @Html.DisplayFor(modelItem => item.OrderNumber)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.State)
+			@item.State.GetDisplayName()
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OrderID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })
+			@Html.ActionLink("编辑", "Edit", new { id = item.OrderID }) |
+			@Html.ActionLink("删除", "Delete", new { id = item.OrderID }, new { role = "button", @class = "btn btn-danger btn-xs" })
         </td>
     </tr>
 }

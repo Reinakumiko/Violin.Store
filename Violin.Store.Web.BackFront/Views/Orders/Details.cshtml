@@ -1,13 +1,16 @@
-﻿@model Violin.Store.Classes.Orders
+﻿@using Violin.Store.Tools;
+@using Violin.Store.Classes;
+
+@model Orders
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
 <div>
-    <h4>Orders</h4>
+	<h2>订单详情</h2>
+    <div></div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -23,12 +26,12 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.State)
+			@Model.State.GetDisplayName()
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderID }) |
-    @Html.ActionLink("Back to List", "Index")
+	<a href="../Edit/@Model.OrderID" role="button" class="btn btn-primary">编辑条目</a>
+	<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
 </p>
