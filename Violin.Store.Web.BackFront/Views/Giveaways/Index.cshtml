@@ -1,16 +1,20 @@
-﻿@model IEnumerable<Violin.Store.Classes.Giveaway>
+﻿@model IEnumerable<Violin.Store.Classes.Giveaways>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "主页 · 赠品";
 }
 
-<h2>Index</h2>
+<h2>赠品概览</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+	@Html.ActionLink("新建条目", "Create", null, new { role = "button", @class = "btn btn-primary" })
+	<a href="/" role="button" class="btn btn-info" style="margin-left: 10px;">返回主页</a>
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Discography.Title)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -20,12 +24,15 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Discography.Title)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GivewayId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.GivewayId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GivewayId })
+			@Html.ActionLink("编辑", "Edit", new { id = item.GivewayId }) |
+			@Html.ActionLink("详情", "Details", new { id = item.GivewayId }) |
+			@Html.ActionLink("删除", "Delete", new { id = item.GivewayId }, new { role = "button", @class = "btn btn-danger btn-xs" })
         </td>
     </tr>
 }

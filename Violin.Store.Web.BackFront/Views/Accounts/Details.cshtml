@@ -1,7 +1,8 @@
 ﻿@model Violin.Store.Classes.UserAccount
+@using Violin.Store.Tools;
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "详情 · 用户";
 }
 
 
@@ -47,7 +48,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Access)
+			@Model.Access.GetDisplayName()
         </dd>
 
     </dl>

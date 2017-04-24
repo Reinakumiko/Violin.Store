@@ -1,17 +1,17 @@
-﻿@model Violin.Store.Classes.Giveaway
+﻿@model Violin.Store.Classes.Giveaways
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "编辑 · 赠品";
 }
 
-<h2>Edit</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Giveaway</h4>
+		<h2>修改赠品</h2>
+        <div>修改专辑内的赠品信息</div>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.GivewayId)
@@ -25,13 +25,18 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model._idDiscography, "专辑名称", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("_idDiscography", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model._idDiscography, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+				<input type="submit" value="保存条目" class="btn btn-primary" />
+				<a href="../" role="button" class="btn btn-default">返回列表</a>
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

@@ -1,16 +1,24 @@
-﻿@model Violin.Store.Classes.Giveaway
+﻿@model Violin.Store.Classes.Giveaways
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "移除 · 赠品";
 }
 
 <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Giveaway</h4>
+	<h2>移除赠品</h2>
+    <div>确定要移除该赠品吗?</div>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Discography.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discography.Title)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -25,8 +33,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+			<input type="submit" value="删除条目" class="btn btn-danger" />
+			<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
         </div>
     }
 </div>

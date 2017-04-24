@@ -4,14 +4,12 @@
 @model Orders
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "移除 · 订单";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Orders</h4>
+	<h2>移除订单</h2>
+    <h4>确定要移除这条订单信息吗?</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -36,7 +34,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-			<input type="submit" value="删除条目" class="btn btn-danger" />
+			<input type="submit" value="删除条目" class="btn btn-danger" disabled="disabled" />
 			<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
         </div>
     }

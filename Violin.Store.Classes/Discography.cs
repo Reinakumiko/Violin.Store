@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
+using Violin.Store.Classes;
 
 namespace Violin.Store.Classes
 {
@@ -77,7 +78,7 @@ namespace Violin.Store.Classes
 		/// 附送赠品
 		/// </summary>
 		[Display(Name = "附赠品")]
-		public virtual List<Giveaway> Giveaway { get; set; }
+		public virtual List<Giveaways> Giveaway { get; set; }
 
 		public override string ToString()
 		{

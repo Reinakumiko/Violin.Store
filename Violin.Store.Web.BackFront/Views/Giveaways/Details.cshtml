@@ -1,15 +1,23 @@
-﻿@model Violin.Store.Classes.Giveaway
+﻿@model Violin.Store.Classes.Giveaways
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "详情 · 赠品";
 }
 
-<h2>Details</h2>
 
 <div>
-    <h4>Giveaway</h4>
+	<h2>赠品详情</h2>
+    <div>专辑内赠品的详细信息</div>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Discography.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discography.Title)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -21,6 +29,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.GivewayId }) |
-    @Html.ActionLink("Back to List", "Index")
+	<a href="../Edit/@Model.GivewayId" role="button" class="btn btn-primary">编辑条目</a>
+	<a href="../" role="button" class="btn btn-default" style="margin-left: 10px;">返回列表</a>
 </p>

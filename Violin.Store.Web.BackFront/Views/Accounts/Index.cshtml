@@ -1,15 +1,17 @@
 ﻿@using Violin.Store.Classes;
 @using Violin.Store.Classes.AccessFlags;
+@using Violin.Store.Tools;
+
 @model IEnumerable<UserAccount>
 
 @{
-	ViewBag.Title = "Index";
+	ViewBag.Title = "主页 · 用户";
 }
 
 <h2>用户管理目录</h2>
 
 <p>
-	@Html.ActionLink("新建条目", "Create", null, new { role = "button", @class = "btn btn-primary" })
+	@Html.ActionLink("新建条目", "Create", null, new { role = "button", @class = "btn btn-primary", disabled = "disabled" })
 	<a href="/" role="button" class="btn btn-info" style="margin-left: 10px;">返回主页</a>
 </p>
 <table class="table">
@@ -48,7 +50,7 @@
 				@Html.DisplayFor(modelItem => item.PhoneNumber)
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.Access)
+				@item.Access.GetDisplayName()
 			</td>
 			<td>
 				@Html.ActionLink("编辑", "Edit", new { id = item.UserId }) |

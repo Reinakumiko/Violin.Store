@@ -1,7 +1,7 @@
 ﻿@model Violin.Store.Classes.IncludedTracks
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "移除 · 曲目";
 }
 
 <div>
@@ -10,11 +10,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Discography.CoverImage)
+            @Html.DisplayNameFor(model => model.Discography)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Discography.CoverImage)
+            @Html.DisplayFor(model => model.Discography.Title)
         </dd>
 
         <dt>

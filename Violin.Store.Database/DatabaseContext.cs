@@ -62,6 +62,16 @@ namespace Violin.Store.Database
 		/// </summary>
 		public DbSet<ShoppingCart> Cart { get; set; }
 
+		/// <summary>
+		/// 收货地址
+		/// </summary>
+		public DbSet<ReceveAddress> ReceveAddresses { get; set; }
+
+		/// <summary>
+		/// 赠品
+		/// </summary>
+		public DbSet<Giveaways> Giveaways { get; set; }
+
 		public DatabaseContext()
 #if MySQL
             :base("name=MySQLConnectionString")
@@ -77,9 +87,5 @@ namespace Violin.Store.Database
 
 			base.OnModelCreating(modelBuilder);
 		}
-
-		public System.Data.Entity.DbSet<Violin.Store.Classes.ReceveAddress> ReceveAddresses { get; set; }
-
-		public System.Data.Entity.DbSet<Violin.Store.Classes.Giveaway> Giveaways { get; set; }
 	}
 }
